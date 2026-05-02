@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Cursor 3.x 介绍页：Agents Window、Design Mode、Canvases、SDK、定价方案、竞品对比。3.0→3.1→3.2 演进全记录。" />
+    <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1d1d1f" media="(prefers-color-scheme: dark)" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Cursor 3.x · 完整功能介绍" />
+    <meta property="og:description" content="Cursor 3.x 全功能介绍：Agents Window、Design Mode、Canvases、SDK、Security Review、定价方案" />
+    <meta property="og:locale" content="zh_CN" />
+    
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net" crossorigin />
+    <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700|jetbrains-mono:400,500,600&display=swap" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Cursor 3.x · 完整功能介绍</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到正文</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="#">Cursor <span class="logo-ver">3.x</span></a>
+        <nav class="nav" aria-label="页面导航">
+          <a href="#visual">一览</a>
+          <a href="#highlights">亮点</a>
+          <a href="#new-features">新功能</a>
+          <a href="#media">影像</a>
+          <a href="#timeline">演进</a>
+          <a href="#pricing">定价</a>
+          <a href="#compare">对比</a>
+          <a href="#start">体验</a>
+        </nav>
+        <div class="lang-switch">
+          <a href="en/" hreflang="en" aria-label="Switch to English">EN</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Changelog 3.2 · 2026 年 4 月 24 日</p>
+            <h1>以 Agent 为中心的<br />统一工作区。</h1>
+            <p class="lead">并行编排本地、worktree、云端与 SSH 上的多个 Agent；需要时一键回到完整 IDE 深度。Cursor 3.x 带来 Canvases 可视化、SDK 编程接口、Security Review 安全审查等重大更新。</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://cursor.com/blog/cursor-3" target="_blank" rel="noopener noreferrer">官方发布</a>
+              <a class="btn btn-secondary" href="https://cursor.com/changelog/3-0" target="_blank" rel="noopener noreferrer">Changelog</a>
+            </div>
+            <p class="font-note">字体：<strong>Inter</strong>、<strong>JetBrains Mono</strong>（Bunny Fonts · SIL OFL）</p>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="device-frame">
+              <div class="device-notch"></div>
+              <div class="device-screen">
+                <div class="mock-sidebar">
+                  <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                  <div class="mock-rows">
+                    <div class="mock-row active"></div>
+                    <div class="mock-row"></div>
+                    <div class="mock-row"></div>
+                  </div>
+                </div>
+                <div class="mock-main">
+                  <div class="mock-chat"></div>
+                  <div class="mock-chat short"></div>
+                  <div class="mock-browser"><span>Design Mode</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visual -->
+      <section id="visual" class="section">
+        <div class="container">
+          <p class="section-label">可视化</p>
+          <h2 class="section-title">三种「AI 写代码」的坐法</h2>
+          <p class="section-desc">不是谁绝对更强，而是<strong>交互重心不同</strong>：插件补全、IDE 内 Agent、终端 Agent 三条路径。下图抽象自常见产品形态，便于选型讨论。</p>
+          <figure class="diagram-card animate-on-scroll">
+            <svg class="diagram-svg" viewBox="0 0 960 280" role="img" aria-labelledby="diagram-title diagram-desc">
+              <title id="diagram-title">Cursor、GitHub Copilot、Claude Code 产品形态对比示意图</title>
+              <desc id="diagram-desc">三列分别表示 AI 原生 IDE、多编辑器插件、终端 Agent 的典型结构。</desc>
+              <defs>
+                <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1" class="svg-grad-blue"><stop offset="0%" stop-color="#0071e3" stop-opacity="0.12"/><stop offset="100%" stop-color="#0071e3" stop-opacity="0.02"/></linearGradient>
+                <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1" class="svg-grad-green"><stop offset="0%" stop-color="#34c759" stop-opacity="0.1"/><stop offset="100%" stop-color="#34c759" stop-opacity="0.02"/></linearGradient>
+                <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1" class="svg-grad-purple"><stop offset="0%" stop-color="#af52de" stop-opacity="0.1"/><stop offset="100%" stop-color="#af52de" stop-opacity="0.02"/></linearGradient>
+              </defs>
+              <rect x="24" y="32" width="280" height="216" rx="20" fill="url(#g1)" class="svg-card-blue"/>
+              <text x="164" y="64" text-anchor="middle" class="svg-label">Cursor</text>
+              <text x="164" y="88" text-anchor="middle" class="svg-caption">AI 原生 IDE</text>
+              <rect x="48" y="108" width="232" height="44" rx="8" class="svg-rect-light"/>
+              <rect x="48" y="164" width="112" height="72" rx="8" class="svg-rect-light"/>
+              <rect x="168" y="164" width="112" height="72" rx="8" class="svg-rect-accent"/>
+              <text x="104" y="136" text-anchor="middle" class="svg-mini">编辑器 / LSP</text>
+              <text x="104" y="202" text-anchor="middle" class="svg-mini">文件树</text>
+              <text x="224" y="202" text-anchor="middle" class="svg-mini">Agents</text>
+              <rect x="340" y="32" width="280" height="216" rx="20" fill="url(#g2)" class="svg-card-green"/>
+              <text x="480" y="64" text-anchor="middle" class="svg-label">GitHub Copilot</text>
+              <text x="480" y="88" text-anchor="middle" class="svg-caption">宿主 IDE 插件</text>
+              <rect x="364" y="108" width="232" height="128" rx="8" class="svg-rect-light"/>
+              <text x="480" y="140" text-anchor="middle" class="svg-mini">JetBrains / VS Code / …</text>
+              <rect x="388" y="156" width="184" height="64" rx="8" class="svg-rect-green"/>
+              <text x="480" y="194" text-anchor="middle" class="svg-mini">补全 · Chat ·（视计划的）Agent</text>
+              <rect x="656" y="32" width="280" height="216" rx="20" fill="url(#g3)" class="svg-card-purple"/>
+              <text x="796" y="64" text-anchor="middle" class="svg-label">Claude Code</text>
+              <text x="796" y="88" text-anchor="middle" class="svg-caption">终端优先 Agent</text>
+              <rect x="680" y="108" width="232" height="128" rx="8" fill="#1d1d1f"/>
+              <text x="796" y="148" text-anchor="middle" fill="#f5f5f7" class="svg-mini">$ command · 会话</text>
+              <text x="796" y="176" text-anchor="middle" fill="#a1a1a6" class="svg-mini">直接改仓库 · 工具链驱动</text>
+            </svg>
+            <figcaption class="diagram-caption">Cursor 把「编排 Agent」抬到与编辑同级；Copilot 依附现有编辑器生态；Claude Code 把终端当作主舞台。</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- Highlights -->
+      <section id="highlights" class="section section-tint">
+        <div class="container">
+          <p class="section-label">Cursor 3.x</p>
+          <h2 class="section-title">亮点速览</h2>
+          <div class="bento">
+            <article class="bento-card bento-large animate-on-scroll">
+              <div class="bento-icon" aria-hidden="true">◇</div>
+              <h3>Agents Window</h3>
+              <p>全新 Agent 优先界面，支持本地、worktree、云端、SSH 多环境并行运行。侧栏统一管理所有 Agent，包括从移动端、Web、Slack、GitHub、Linear 发起的任务。云 Agent 自动生成演示和截图供验证。</p>
+              <ul class="bento-list">
+                <li>多仓库原生支持</li>
+                <li>本地↔云端无缝切换</li>
+                <li>可随时切回经典 IDE</li>
+              </ul>
+            </article>
+            <article class="bento-card animate-on-scroll">
+              <div class="bento-icon" aria-hidden="true">◎</div>
+              <h3>Design Mode</h3>
+              <p>在内置浏览器中直接标注、框选 UI 元素，精准反馈给 Agent。支持快捷键操作：⌘⇧D 切换、⇧拖拽选区、⌘L 加入对话。</p>
+            </article>
+            <article class="bento-card animate-on-scroll">
+              <div class="bento-icon" aria-hidden="true">▦</div>
+              <h3>Agent Tabs</h3>
+              <p>多会话并排或网格查看，方便对照不同方案。支持 <code>/multitask</code> 异步子代理并行处理，将大任务拆分同时执行。</p>
+            </article>
+            <article class="bento-card animate-on-scroll">
+              <div class="bento-icon" aria-hidden="true">⎇</div>
+              <h3><code>/worktree</code></h3>
+              <p>创建独立 git worktree，实验性改动与主分支完全隔离。后台运行多个隔离任务，准备就绪后一键移入前台测试。</p>
+            </article>
+            <article class="bento-card animate-on-scroll">
+              <div class="bento-icon" aria-hidden="true">≋</div>
+              <h3><code>/best-of-n</code></h3>
+              <p>多模型并行尝试同一任务，各自 worktree 隔离。完成后对比结果，选择最优方案合并。适合探索性任务和质量对比。</p>
+            </article>
+            <article class="bento-card bento-wide animate-on-scroll">
+              <div class="bento-icon" aria-hidden="true">⎘</div>
+              <h3>MCP 结构化输出 & 插件市场</h3>
+              <p>工具返回更丰富结构数据。Marketplace 提供数百款插件（MCP、Skills、Subagents、Rules、Hooks），一键安装。团队可创建私有市场，配置分发策略：默认关闭 / 默认开启 / 强制安装。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- New Features (3.1 - 3.2) -->
+      <section id="new-features" class="section">
+        <div class="container">
+          <p class="section-label">3.1 → 3.2 更新</p>
+          <h2 class="section-title">最新功能速递</h2>
+          <p class="section-desc">Cursor 3.0 发布后持续迭代，带来 <strong>Canvases 可视化</strong>、<strong>SDK 编程接口</strong>、<strong>Security Review</strong> 等重大更新。</p>
+          
+          <div class="feature-grid">
+            <!-- Canvases -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">🎨</div>
+              <div class="feature-meta">
+                <span class="feature-date">Apr 15, 2026</span>
+                <span class="feature-version">3.1</span>
+              </div>
+              <h3>Canvases 可视化画布</h3>
+              <p>Agent 可以创建交互式可视化画布，包含仪表板、自定义界面，支持表格、图表、diff、待办列表等组件。画布作为持久化产物存在于侧边栏。</p>
+              <a href="https://cursor.com/blog/canvas" target="_blank" rel="noopener noreferrer">了解更多 →</a>
+            </article>
+
+            <!-- Multitask -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">⚡</div>
+              <div class="feature-meta">
+                <span class="feature-date">Apr 24, 2026</span>
+                <span class="feature-version">3.2</span>
+              </div>
+              <h3>/multitask 异步并行</h3>
+              <p>使用 <code>/multitask</code> 命令，Cursor 会运行异步子代理并行处理请求，将大任务拆分为小块由多个子代理同时完成，无需排队等待。</p>
+            </article>
+
+            <!-- Worktrees -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">🌿</div>
+              <div class="feature-meta">
+                <span class="feature-date">Apr 24, 2026</span>
+                <span class="feature-version">3.2</span>
+              </div>
+              <h3>改进的 Worktrees</h3>
+              <p>在 Agents Window 中运行后台隔离任务。准备测试时，一键将任意分支移入本地前台。跨分支并行开发更顺畅。</p>
+            </article>
+
+            <!-- Multi-root -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">📁</div>
+              <div class="feature-meta">
+                <span class="feature-date">Apr 24, 2026</span>
+                <span class="feature-version">3.2</span>
+              </div>
+              <h3>Multi-root 工作区</h3>
+              <p>单个 Agent 会话可瞄准由多个文件夹组成的可复用工作区，实现跨仓库（前端、后端、共享库）修改，无需反复切换目标。</p>
+            </article>
+
+            <!-- SDK -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">📦</div>
+              <div class="feature-meta">
+                <span class="feature-date">Apr 29, 2026</span>
+                <span class="feature-version">SDK</span>
+              </div>
+              <h3>Cursor SDK</h3>
+              <p>用几行 TypeScript 构建与 Cursor 同款的可编程代理。支持本地运行或云端 VM，使用任意前沿模型。<code>npm install @cursor/sdk</code></p>
+              <a href="https://cursor.com/docs/sdk/typescript" target="_blank" rel="noopener noreferrer">查看文档 →</a>
+            </article>
+
+            <!-- Security Review -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">🛡️</div>
+              <div class="feature-meta">
+                <span class="feature-date">Apr 30, 2026</span>
+                <span class="feature-version">Beta</span>
+              </div>
+              <h3>Security Review 安全审查</h3>
+              <p><strong>Security Reviewer</strong> 检查每个 PR 的安全漏洞、隐私风险、提示注入攻击。<strong>Vulnerability Scanner</strong> 定期扫描代码库已知漏洞和过时依赖。支持 Slack 推送。</p>
+              <a href="https://cursor.com/docs/security-review" target="_blank" rel="noopener noreferrer">了解更多 →</a>
+            </article>
+
+            <!-- Team Marketplace -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">🏪</div>
+              <div class="feature-meta">
+                <span class="feature-date">May 1, 2026</span>
+                <span class="feature-version">New</span>
+              </div>
+              <h3>Team Marketplace 团队插件市场</h3>
+              <p>管理员可创建团队专属插件市场，配置插件分发策略：Default Off（用户自选）、Default On（默认安装）、Required（强制安装）。</p>
+            </article>
+
+            <!-- Bugbot -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">🐛</div>
+              <div class="feature-meta">
+                <span class="feature-date">Apr 8, 2026</span>
+                <span class="feature-version">Update</span>
+              </div>
+              <h3>Bugbot 代码审查增强</h3>
+              <p>Bugbot 学习项目规则并支持 MCP，提供更精准的 PR 审查。Teams 和 Enterprise 计划可使用高级规则和分析仪表板。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Media -->
+      <section id="media" class="section">
+        <div class="container">
+          <p class="section-label">学习与演示</p>
+          <h2 class="section-title">大陆可用的视频与官方原文</h2>
+          <p class="section-desc"><strong>YouTube</strong> 在大陆通常无法稳定播放，本页已改为<strong>哔哩哔哩嵌入</strong>（社区作者创作，<strong>非 Cursor 官方出品</strong>，仅作学习参考）。产品定义、命令与日期请以右侧<strong>官方英文文档 / Changelog</strong>为准。</p>
+          <div class="media-grid media-grid-featured">
+            <figure class="video-card animate-on-scroll">
+              <div class="video-frame" data-loaded="false">
+                <iframe src="https://player.bilibili.com/player.html?bvid=BV1yorUYWEGD&page=1&high_quality=1&danmaku=0&autoplay=0" title="哔哩哔哩：普通人也可以看的 AI 编程指南" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" onload="this.parentElement.dataset.loaded='true';this.parentElement.classList.add('loaded')"></iframe>
+              </div>
+              <figcaption class="video-caption">
+                <strong>综合入门（中文 · 第三方）</strong>
+                UP：不正经的前端啊。涵盖安装、核心功能、使用思路等，时长较长，适合第一次系统了解 Cursor。
+                <a href="https://www.bilibili.com/video/BV1yorUYWEGD/" target="_blank" rel="noopener noreferrer">在哔哩哔哩打开</a>
+              </figcaption>
+            </figure>
+            <figure class="video-card animate-on-scroll">
+              <div class="video-frame" data-loaded="false">
+                <iframe src="https://player.bilibili.com/player.html?bvid=BV1bNSCYAE7p&page=1&high_quality=1&danmaku=0&autoplay=0" title="哔哩哔哩：Cursor 新手入门 基础设置与 Rules" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" onload="this.parentElement.dataset.loaded='true';this.parentElement.classList.add('loaded')"></iframe>
+              </div>
+              <figcaption class="video-caption">
+                <strong>短一点：基础设置（中文 · 第三方）</strong>
+                UP：AI进化论-花生。中文界面、Rules、模型与功能开关等，适合动手跟练。
+                <a href="https://www.bilibili.com/video/BV1bNSCYAE7p/" target="_blank" rel="noopener noreferrer">在哔哩哔哩打开</a>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="doc-panel animate-on-scroll">
+            <h3 class="doc-panel-title">官方一手信息（英文页面为主）</h3>
+            <p class="doc-panel-lead">下列链接对应本页涉及的 3.0 功能与背景叙事；无需视频即可查阅。若打不开，可稍后重试或更换网络环境。</p>
+            <ul class="doc-link-list">
+              <li><a href="https://cursor.com/changelog/3-0" target="_blank" rel="noopener noreferrer">Changelog 3.0</a><span class="doc-link-hint">Agents Window、Design Mode、命令与改进列表</span></li>
+              <li><a href="https://cursor.com/blog/cursor-3" target="_blank" rel="noopener noreferrer">Meet Cursor 3 博文</a><span class="doc-link-hint">产品叙事与 Composer 2、云本机交接等</span></li>
+              <li><a href="https://cursor.com/docs/agent/agents-window" target="_blank" rel="noopener noreferrer">Agents Window 文档</a><span class="doc-link-hint">如何打开与使用新工作区</span></li>
+              <li><a href="https://cursor.com/blog/agent-computer-use" target="_blank" rel="noopener noreferrer">Agent 计算机使用</a><span class="doc-link-hint">自测、录屏验收等能力说明</span></li>
+              <li><a href="https://cursor.com/blog/third-era" target="_blank" rel="noopener noreferrer">The third era</a><span class="doc-link-hint">「第三时代」文字版</span></li>
+              <li><a href="https://cursor.com/docs" target="_blank" rel="noopener noreferrer">Docs 总目录</a><span class="doc-link-hint">浏览器工具、MCP、Rules、Cloud Agent 等</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Timeline -->
+      <section id="timeline" class="section section-tint">
+        <div class="container">
+          <p class="section-label">版本演进</p>
+          <h2 class="section-title">大版本升级脉络</h2>
+          <p class="section-desc">下面是官方叙事里的几个「分水岭」：从<strong>编辑器里加 AI</strong>，到<strong>多 Agent 并行</strong>，再到<strong>全新 Agent 优先界面</strong>。</p>
+          <ol class="timeline" role="list">
+            <li class="timeline-item">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-card">
+                <span class="timeline-era">1.x 时代 · 底座</span>
+                <h3 class="timeline-title">AI 原生编辑器成型</h3>
+                <p class="timeline-body">Cursor 选择 fork VS Code 而非只做插件，以便深度改造交互与模型管线。根据 <a href="https://cursor.com/changelog/2-0" target="_blank" rel="noopener noreferrer">2.0 changelog</a> 的追溯：<strong>面向 Agent 的内置浏览器</strong>与<strong>沙盒终端</strong>在 <strong>1.7</strong> 即以 beta 形态出现。</p>
+                <ul class="timeline-bullets">
+                  <li>代码补全、对话、代码库索引等日常能力持续迭代</li>
+                  <li>企业场景逐步补齐：终端沙箱、审计、团队规则等</li>
+                </ul>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-card">
+                <span class="timeline-era">2.0 · 2025 年 10 月 29 日</span>
+                <h3 class="timeline-title">Composer 与多 Agent 工作台</h3>
+                <p class="timeline-body"><a href="https://cursor.com/changelog/2-0" target="_blank" rel="noopener noreferrer">Changelog 2.0</a> 将产品明确推到「Agent 并行」：<strong>侧栏管理 Agent 与 Plan</strong>，同一提示下最多 <strong>8</strong> 个 Agent 并行。</p>
+                <ul class="timeline-bullets">
+                  <li><strong>Composer</strong>：Cursor 自研的 agentic 编码模型，强调低延迟与多轮迭代</li>
+                  <li><strong>Browser GA</strong>：内置浏览器正式版，可选中 DOM 元素并把上下文回传给 Agent</li>
+                  <li><strong>Sandboxed Terminals GA（macOS）</strong>：默认在沙箱执行未白名单命令</li>
+                  <li><strong>Plan Mode</strong>：规划与执行可拆分模型</li>
+                  <li><strong>Voice Mode</strong>：语音驱动 Agent；<strong>Cloud Agents</strong> 体验增强</li>
+                </ul>
+                <p class="timeline-more"><a href="https://cursor.com/blog/2-0" target="_blank" rel="noopener noreferrer">阅读 2.0 发布博文</a></p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-card">
+                <span class="timeline-era">Composer 2 · 2026 年 3 月 19 日</span>
+                <h3 class="timeline-title">新一代自研模型（承上启下）</h3>
+                <p class="timeline-body">官方在 <a href="https://cursor.com/blog/composer-2" target="_blank" rel="noopener noreferrer">Composer 2</a> 中将其定位为新的前沿编码模型；与 3.0 博文中的「云 ↔ 本机交接时快速迭代」叙事衔接。</p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-card">
+                <span class="timeline-era">3.0 · 2026 年 4 月 2 日</span>
+                <h3 class="timeline-title">界面重构：Agent 优先的统一工作区</h3>
+                <p class="timeline-body"><a href="https://cursor.com/blog/cursor-3" target="_blank" rel="noopener noreferrer">Cursor 3</a> 强调从底层重做界面：天然 <strong>multi-workspace / 多仓库</strong>，桌面与 <a href="https://cursor.com/agents" target="_blank" rel="noopener noreferrer">cursor.com/agents</a> 的云 Agent 体验合一。</p>
+                <ul class="timeline-bullets">
+                  <li>与 2.0 的关系：2.0 把「多 Agent + 模型 + 浏览器工具」做深；3.0 把「编排面」升级为独立 Agents Window</li>
+                  <li>可随时回到经典 IDE；也可本地/云端会话互迁</li>
+                </ul>
+                <p class="timeline-more"><a href="https://cursor.com/changelog/3-0" target="_blank" rel="noopener noreferrer">Changelog 3.0 全文</a></p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Pricing -->
+      <section id="pricing" class="section">
+        <div class="container">
+          <p class="section-label">定价方案</p>
+          <h2 class="section-title">选择适合你的计划</h2>
+          <p class="section-desc">Cursor 提供从免费到企业级的多种方案。<strong>Pro+</strong> 推荐日常 Agent 用户，<strong>Ultra</strong> 适合重度用户。</p>
+          
+          <div class="pricing-grid">
+            <!-- Hobby -->
+            <div class="pricing-card animate-on-scroll">
+              <div class="pricing-header">
+                <h3>Hobby</h3>
+                <div class="pricing-price">免费</div>
+              </div>
+              <ul class="pricing-features">
+                <li>无需信用卡</li>
+                <li>有限的 Agent 请求</li>
+                <li>有限的 Tab 补全</li>
+              </ul>
+              <a href="https://cursor.com/download" class="btn btn-secondary" target="_blank">下载</a>
+            </div>
+
+            <!-- Pro -->
+            <div class="pricing-card animate-on-scroll">
+              <div class="pricing-header">
+                <h3>Pro</h3>
+                <div class="pricing-price">$20<span>/月</span></div>
+              </div>
+              <ul class="pricing-features">
+                <li>扩展 Agent 限额</li>
+                <li>访问前沿模型</li>
+                <li>MCP、Skills、Hooks</li>
+                <li>Cloud Agents</li>
+              </ul>
+              <a href="https://cursor.com/api/auth/checkoutDeepControl?yearly=false" class="btn btn-secondary" target="_blank">获取 Pro</a>
+            </div>
+
+            <!-- Pro+ -->
+            <div class="pricing-card pricing-featured animate-on-scroll">
+              <div class="pricing-badge">推荐</div>
+              <div class="pricing-header">
+                <h3>Pro+</h3>
+                <div class="pricing-price">$60<span>/月</span></div>
+              </div>
+              <ul class="pricing-features">
+                <li>Pro 全部功能</li>
+                <li>3x OpenAI/Claude/Gemini 用量</li>
+              </ul>
+              <a href="https://cursor.com/api/auth/checkoutDeepControl?tier=pro_plus&yearly=false" class="btn btn-primary" target="_blank">获取 Pro+</a>
+            </div>
+
+            <!-- Ultra -->
+            <div class="pricing-card animate-on-scroll">
+              <div class="pricing-header">
+                <h3>Ultra</h3>
+                <div class="pricing-price">$200<span>/月</span></div>
+              </div>
+              <ul class="pricing-features">
+                <li>Pro 全部功能</li>
+                <li>20x OpenAI/Claude/Gemini 用量</li>
+                <li>优先体验新功能</li>
+              </ul>
+              <a href="https://cursor.com/api/auth/checkoutDeepControl?tier=ultra&yearly=false" class="btn btn-secondary" target="_blank">获取 Ultra</a>
+            </div>
+
+            <!-- Teams -->
+            <div class="pricing-card animate-on-scroll">
+              <div class="pricing-header">
+                <h3>Teams</h3>
+                <div class="pricing-price">$40<span>/用户/月</span></div>
+              </div>
+              <ul class="pricing-features">
+                <li>Pro 全部功能</li>
+                <li>共享聊天、命令、规则</li>
+                <li>集中计费 & 用量分析</li>
+                <li>RBAC 角色权限</li>
+                <li>SAML/OIDC SSO</li>
+              </ul>
+              <a href="https://cursor.com/team/new-team?yearly=false" class="btn btn-secondary" target="_blank">获取 Teams</a>
+            </div>
+
+            <!-- Enterprise -->
+            <div class="pricing-card animate-on-scroll">
+              <div class="pricing-header">
+                <h3>Enterprise</h3>
+                <div class="pricing-price">定制</div>
+              </div>
+              <ul class="pricing-features">
+                <li>Teams 全部功能</li>
+                <li>池化用量 & 发票付款</li>
+                <li>SCIM 席位管理</li>
+                <li>AI 代码追踪 API</li>
+                <li>优先支持 & 客户经理</li>
+              </ul>
+              <a href="https://cursor.com/contact-sales?source=pricing_enterprise" class="btn btn-secondary" target="_blank">联系销售</a>
+            </div>
+          </div>
+
+          <div class="pricing-note">
+            <p>另有 <strong>Bugbot</strong> 代码审查服务：Pro $40/用户/月，Teams $40/用户/月。<a href="https://cursor.com/pricing" target="_blank" rel="noopener noreferrer">查看完整定价 →</a></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Agents Window -->
+      <section id="agents-window" class="section">
+        <div class="container split">
+          <div>
+            <p class="section-label">能力</p>
+            <h2 class="section-title">Agents Window</h2>
+            <p class="section-desc">在本地、git worktree、云端与远程 <strong>SSH</strong> 等环境中并行运行多个 Agent；界面以 Agent 为中心，同时保留开发环境深度。可随时切回传统 IDE。</p>
+            <ul class="checklist">
+              <li>统一侧栏汇总进行中的 Agent（各渠道以官方支持为准）</li>
+              <li>云与本机快速交接，适合长任务与回到桌面调试</li>
+            </ul>
+            <p class="source-note"><a href="https://cursor.com/changelog/3-0" target="_blank" rel="noopener noreferrer">cursor.com/changelog/3-0</a></p>
+          </div>
+          <div class="panel-visual animate-on-scroll" aria-hidden="true">
+            <div class="flow-chart">
+              <div class="flow-node">本地</div>
+              <div class="flow-node">Worktree</div>
+              <div class="flow-node">云端</div>
+              <div class="flow-node">SSH</div>
+              <div class="flow-hub">Agents Window</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Design Mode -->
+      <section id="design-mode" class="section section-tint">
+        <div class="container">
+          <p class="section-label">交互</p>
+          <h2 class="section-title">Design Mode</h2>
+          <p class="section-desc">在 Agents Window 内置浏览器中标注、框选界面元素，减少纯文字描述误差。下表快捷键来自官方 changelog（macOS 符号；Windows 上多为 Ctrl / Alt）。</p>
+          <div class="kbd-table-wrap animate-on-scroll">
+            <table class="kbd-table">
+              <thead><tr><th scope="col">操作</th><th scope="col">快捷键</th></tr></thead>
+              <tbody>
+                <tr><td>开关 Design Mode</td><td><kbd>⌘</kbd> + <kbd>Shift</kbd> + <kbd>D</kbd></td></tr>
+                <tr><td>框选区域</td><td><kbd>Shift</kbd> + 拖拽</td></tr>
+                <tr><td>元素加入对话</td><td><kbd>⌘</kbd> + <kbd>L</kbd></td></tr>
+                <tr><td>元素加入输入框</td><td><kbd>⌥</kbd> + 点击</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Editor -->
+      <section id="editor" class="section">
+        <div class="container narrow-block">
+          <p class="section-label">编辑器</p>
+          <h2 class="section-title">Agent Tabs 与命令</h2>
+          <p class="section-desc"><strong>Agent Tabs</strong> 支持并排或网格查看多会话。<code>/worktree</code> 与 <code>/best-of-n</code> 成为编辑器内新入口；旧选型方式已废弃；云端 Agent 已从编辑器移除（见官方 changelog）。</p>
+          <ul class="checklist checklist-tight">
+            <li><code>/worktree</code>：单独 git worktree，实验性改动与主分支隔离。</li>
+            <li><code>/best-of-n</code>：多模型并行尝试同一任务，各自 worktree，便于横向对比质量。</li>
+            <li>大文件 diff 渲染更快、更省内存；Agent 对长耗时任务监控更稳。</li>
+            <li>新增 <code>Await</code> 工具：可等待后台 shell、子 Agent 或特定输出，减少盲等重试。</li>
+            <li>共享对话中会附带 Plans；浏览器自动化工具面收敛，并支持截图坐标点击兜底。</li>
+          </ul>
+          <p class="source-note">以上摘录自 <a href="https://cursor.com/changelog/3-0" target="_blank" rel="noopener noreferrer">3.0 changelog</a>「Editor / Other」等小节。</p>
+        </div>
+      </section>
+
+      <!-- Compare -->
+      <section id="compare" class="section section-tint">
+        <div class="container">
+          <p class="section-label">竞品</p>
+          <h2 class="section-title">维度对比（定性）</h2>
+          <p class="section-desc">下表为<strong>产品形态与常见用法</strong>的归纳，便于讨论；不包含实时价格与功能开关细节——请以各产品官网为准。</p>
+          <div class="compare-wrap animate-on-scroll">
+            <table class="compare-table">
+              <thead><tr><th scope="col">维度</th><th scope="col">Cursor</th><th scope="col">GitHub Copilot</th><th scope="col">Claude Code</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">主界面形态</th><td>独立 AI IDE（VS Code 分支）</td><td>多编辑器插件</td><td>终端 / CLI Agent</td></tr>
+                <tr><th scope="row">IDE 内联编辑、LSP、调试一体</th><td><span class="dot strong" title="强"></span></td><td><span class="dot mid" title="中"></span></td><td><span class="dot weak" title="弱"></span></td></tr>
+                <tr><th scope="row">多 Agent 编排、并行会话</th><td><span class="dot strong" title="强"></span></td><td><span class="dot mid" title="中"></span></td><td><span class="dot strong" title="强"></span></td></tr>
+                <tr><th scope="row">可视化 UI 指定、浏览器批注</th><td><span class="dot strong" title="强"></span></td><td><span class="dot weak" title="弱"></span></td><td><span class="dot weak" title="弱"></span></td></tr>
+                <tr><th scope="row">「不换编辑器」—— JetBrains 等</th><td><span class="dot weak" title="弱"></span></td><td><span class="dot strong" title="强"></span></td><td><span class="dot strong" title="强"></span></td></tr>
+                <tr><th scope="row">团队合规、微软生态一体</th><td><span class="dot mid" title="中"></span></td><td><span class="dot strong" title="强"></span></td><td><span class="dot mid" title="中"></span></td></tr>
+                <tr><th scope="row">Cloud / 远程 Agent</th><td><span class="dot strong" title="强"></span></td><td><span class="dot mid" title="中"></span></td><td><span class="dot weak" title="弱"></span></td></tr>
+                <tr><th scope="row">SDK / 可编程代理</th><td><span class="dot strong" title="强：TypeScript SDK"></span></td><td><span class="dot weak" title="弱"></span></td><td><span class="dot mid" title="中：CLI 集成"></span></td></tr>
+                <tr><th scope="row">安全审查 / 漏洞扫描</th><td><span class="dot strong" title="强：Security Review"></span></td><td><span class="dot mid" title="中：Dependabot"></span></td><td><span class="dot weak" title="弱"></span></td></tr>
+                <tr><th scope="row">插件市场 / MCP 生态</th><td><span class="dot strong" title="强：Marketplace"></span></td><td><span class="dot mid" title="中：Extensions"></span></td><td><span class="dot strong" title="强：MCP 原生"></span></td></tr>
+                <tr><th scope="row">交互式可视化画布</th><td><span class="dot strong" title="强：Canvases"></span></td><td><span class="dot weak" title="弱"></span></td><td><span class="dot weak" title="弱"></span></td></tr>
+                <tr><th scope="row">代码审查 / PR 管理</th><td><span class="dot strong" title="强：Bugbot"></span></td><td><span class="dot strong" title="强：Copilot Review"></span></td><td><span class="dot weak" title="弱"></span></td></tr>
+                <tr><th scope="row">定价起步</th><td>免费 / $20/月</td><td>免费 / $10/月</td><td>按 token 计费</td></tr>
+                <tr><th scope="row">离线 / 本地模型</th><td><span class="dot weak" title="弱"></span></td><td><span class="dot mid" title="中：本地模型可选"></span></td><td><span class="dot weak" title="弱"></span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="insight-cards">
+            <article class="insight-card animate-on-scroll"><h3>更偏 Cursor 的场景</h3><p>长期待在 VS Code 系界面；要 LSP、内置浏览器、多 Agent 面板、Design Mode、Canvases 可视化、Security Review 一体完成前端与全栈迭代。需要 SDK 构建可编程代理。</p></article>
+            <article class="insight-card animate-on-scroll"><h3>更偏 Copilot 的场景</h3><p>已在 JetBrains / Visual Studio 等环境投入大量配置；希望以较低切换成本获得补全与 Chat / Agent 能力。依赖微软生态和 GitHub 集成。</p></article>
+            <article class="insight-card animate-on-scroll"><h3>更偏 Claude Code 的场景</h3><p>习惯终端与脚本化任务；希望 Agent 以仓库为中心自主多步修改，编辑器仅作查看或辅助。重视 MCP 原生集成和 token 灵活计费。</p></article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section id="start" class="section section-cta">
+        <div class="container narrow-block">
+          <h2 class="section-title">如何体验</h2>
+          <ol class="steps">
+            <li>升级至 Cursor 3（或当前最新版）。</li>
+            <li><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>（macOS：<kbd>⌘</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>）。</li>
+            <li>运行 <strong>Agents Window</strong>。</li>
+          </ol>
+          <a class="btn btn-primary" href="https://cursor.com/docs/agent/agents-window" target="_blank" rel="noopener noreferrer">阅读 Agents Window 文档</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>功能摘要来自 <a href="https://cursor.com/changelog/3-0" target="_blank" rel="noopener noreferrer">官方 Changelog</a>；演进时间线引用 1.x/2.0/Composer 2/3.0 公开博文与 changelog；内嵌视频为<strong>哔哩哔哩第三方教程</strong>。竞品对比为定性归纳，请以各厂商文档为准。</p>
+        <p class="muted">本页为静态演示站点，可自由修改与再发布。</p>
+      </div>
+    </footer>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="切换暗色模式" title="切换暗色模式">🌙</button>
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="返回顶部" title="返回顶部">↑</button>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
