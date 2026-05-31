@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Cursor 3.x 介绍页：Agents Window、Design Mode、Canvases、SDK、定价方案、竞品对比。3.0→3.1→3.2 演进全记录。" />
+    <meta name="description" content="Cursor 3.x 介绍页：Agents Window、Design Mode、Canvases、SDK、Auto-review、Composer 2.5、定价方案、竞品对比。3.0→3.6 演进全记录。" />
     <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#1d1d1f" media="(prefers-color-scheme: dark)" />
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Cursor 3.x · 完整功能介绍" />
-    <meta property="og:description" content="Cursor 3.x 全功能介绍：Agents Window、Design Mode、Canvases、SDK、Security Review、定价方案" />
+    <meta property="og:description" content="Cursor 3.x 全功能介绍：Agents Window、Design Mode、Canvases、Auto-review、Composer 2.5、定价方案" />
     <meta property="og:locale" content="zh_CN" />
     
     <!-- PWA -->
@@ -52,12 +52,12 @@
       <section class="hero">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow">Changelog 3.2 · 2026 年 4 月 24 日</p>
+            <p class="eyebrow">Changelog 3.6 · 2026 年 5 月 29 日</p>
             <h1>以 Agent 为中心的<br />统一工作区。</h1>
-            <p class="lead">并行编排本地、worktree、云端与 SSH 上的多个 Agent；需要时一键回到完整 IDE 深度。Cursor 3.x 带来 Canvases 可视化、SDK 编程接口、Security Review 安全审查等重大更新。</p>
+            <p class="lead">并行编排本地、worktree、云端与 SSH 上的多个 Agent；需要时一键回到完整 IDE 深度。Cursor 3.x 带来 Auto-review 智能审查、Composer 2.5 新模型、共享画布、/loop 循环任务等重大更新。</p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="https://cursor.com/blog/cursor-3" target="_blank" rel="noopener noreferrer">官方发布</a>
-              <a class="btn btn-secondary" href="https://cursor.com/changelog/3-0" target="_blank" rel="noopener noreferrer">Changelog</a>
+              <a class="btn btn-secondary" href="https://cursor.com/changelog" target="_blank" rel="noopener noreferrer">Changelog</a>
             </div>
             <p class="font-note">字体：<strong>Inter</strong>、<strong>JetBrains Mono</strong>（Bunny Fonts · SIL OFL）</p>
           </div>
@@ -136,7 +136,7 @@
             <article class="bento-card bento-large animate-on-scroll">
               <div class="bento-icon" aria-hidden="true">◇</div>
               <h3>Agents Window</h3>
-              <p>全新 Agent 优先界面，支持本地、worktree、云端、SSH 多环境并行运行。侧栏统一管理所有 Agent，包括从移动端、Web、Slack、GitHub、Linear 发起的任务。云 Agent 自动生成演示和截图供验证。</p>
+              <p>全新 Agent 优先界面，支持本地、worktree、云端、SSH 多环境并行运行。侧栏统一管理所有 Agent，包括从移动端、Web、Slack、GitHub、Linear、Jira、Microsoft Teams 发起的任务。云 Agent 自动生成演示和截图供验证。</p>
               <ul class="bento-list">
                 <li>多仓库原生支持</li>
                 <li>本地↔云端无缝切换</li>
@@ -154,14 +154,14 @@
               <p>多会话并排或网格查看，方便对照不同方案。支持 <code>/multitask</code> 异步子代理并行处理，将大任务拆分同时执行。</p>
             </article>
             <article class="bento-card animate-on-scroll">
-              <div class="bento-icon" aria-hidden="true">⎇</div>
-              <h3><code>/worktree</code></h3>
-              <p>创建独立 git worktree，实验性改动与主分支完全隔离。后台运行多个隔离任务，准备就绪后一键移入前台测试。</p>
+              <div class="bento-icon" aria-hidden="true">⎔</div>
+              <h3>Auto-review 智能审查</h3>
+              <p><strong>3.6 新增</strong>：全新运行模式，减少审批疲劳。白名单命令立即执行，沙盒任务安全运行，其他请求由分类子 Agent 自主决策是否放行。</p>
             </article>
             <article class="bento-card animate-on-scroll">
-              <div class="bento-icon" aria-hidden="true">≋</div>
-              <h3><code>/best-of-n</code></h3>
-              <p>多模型并行尝试同一任务，各自 worktree 隔离。完成后对比结果，选择最优方案合并。适合探索性任务和质量对比。</p>
+              <div class="bento-icon" aria-hidden="true">↻</div>
+              <h3><code>/loop</code> 循环任务</h3>
+              <p><strong>3.5 新增</strong>：按计划重复运行提示，直到达成目标或手动停止。适合监控部署状态、持续测试等长时间任务。</p>
             </article>
             <article class="bento-card bento-wide animate-on-scroll">
               <div class="bento-icon" aria-hidden="true">⎘</div>
@@ -172,14 +172,158 @@
         </div>
       </section>
 
-      <!-- New Features (3.1 - 3.2) -->
+      <!-- New Features (3.1 - 3.6) -->
       <section id="new-features" class="section">
         <div class="container">
-          <p class="section-label">3.1 → 3.2 更新</p>
+          <p class="section-label">3.1 → 3.6 更新</p>
           <h2 class="section-title">最新功能速递</h2>
-          <p class="section-desc">Cursor 3.0 发布后持续迭代，带来 <strong>Canvases 可视化</strong>、<strong>SDK 编程接口</strong>、<strong>Security Review</strong> 等重大更新。</p>
+          <p class="section-desc">Cursor 3.0 发布后持续迭代，带来 <strong>Auto-review 智能审查</strong>、<strong>Composer 2.5 新模型</strong>、<strong>共享画布</strong>、<strong>并行构建</strong>等重大更新。</p>
           
           <div class="feature-grid">
+            <!-- Auto-review -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">🛡️</div>
+              <div class="feature-meta">
+                <span class="feature-date">May 29, 2026</span>
+                <span class="feature-version">3.6</span>
+              </div>
+              <h3>Auto-review 智能审查模式</h3>
+              <p>全新运行模式，减少审批疲劳。白名单命令立即执行，沙盒任务安全运行，其他请求由分类子 Agent 自主决策：放行、换方案、或请求人工审批。支持自定义指令引导分类器。</p>
+              <a href="https://cursor.com/changelog" target="_blank" rel="noopener noreferrer">了解更多 →</a>
+            </article>
+
+            <!-- Composer 2.5 -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">🧠</div>
+              <div class="feature-meta">
+                <span class="feature-date">May 18, 2026</span>
+                <span class="feature-version">3.6</span>
+              </div>
+              <h3>Composer 2.5 新模型</h3>
+              <p>重大智能提升：长任务持续能力更强、复杂指令遵循更可靠、协作体验更流畅。新增快速层级，首周双倍用量。</p>
+            </article>
+
+            <!-- Shared Canvases -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">🎨</div>
+              <div class="feature-meta">
+                <span class="feature-date">May 20, 2026</span>
+                <span class="feature-version">3.5</span>
+              </div>
+              <h3>共享画布 Shared Canvases</h3>
+              <p>将 Agent 创建的交互式画布（报告、仪表板、自定义界面）分享给团队。接收者可在浏览器中打开实时快照，无需登录 Cursor。Dashboard 中可查看团队所有共享画布。</p>
+            </article>
+
+            <!-- /loop -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">↻</div>
+              <div class="feature-meta">
+                <span class="feature-date">May 20, 2026</span>
+                <span class="feature-version">3.5</span>
+              </div>
+              <h3><code>/loop</code> 循环任务</h3>
+              <p>按计划重复运行提示，直到达成目标或手动停止。不指定间隔时，Agent 自行决定唤醒时机。示例："每 5 分钟检查部署状态"、"持续工作直到测试通过"。</p>
+            </article>
+
+            <!-- Automations -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">⚙️</div>
+              <div class="feature-meta">
+                <span class="feature-date">May 20, 2026</span>
+                <span class="feature-version">3.5</span>
+              </div>
+              <h3>Automations 自动化增强</h3>
+              <p>自动化任务现可在 Agents Window 中管理。支持多仓库自动化（跨仓库推理）和无仓库自动化（监控工具信号）。新增 5 个无仓库模板：Slack 摘要、产品分析、FAQ、财务、客户健康。</p>
+            </article>
+
+            <!-- Cursor in Jira -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">📋</div>
+              <div class="feature-meta">
+                <span class="feature-date">May 19, 2026</span>
+                <span class="feature-version">3.5</span>
+              </div>
+              <h3>Cursor 集成 Jira</h3>
+              <p>在 Jira 中分配工作项给 Cursor，或在评论中 @Cursor 启动云 Agent。Cursor 使用工作项标题、描述、评论和仓库配置来确定任务范围。</p>
+            </article>
+
+            <!-- Cursor in Teams -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">💬</div>
+              <div class="feature-meta">
+                <span class="feature-date">May 2026</span>
+                <span class="feature-version">3.5</span>
+              </div>
+              <h3>Cursor 集成 Microsoft Teams</h3>
+              <p>在 Microsoft Teams 中 @Cursor 委派任务或拉取信息到 Teams。与 Slack 集成类似，支持团队工作流。</p>
+            </article>
+
+            <!-- Multi-repo Environments -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">📁</div>
+              <div class="feature-meta">
+                <span class="feature-date">May 13, 2026</span>
+                <span class="feature-version">3.4</span>
+              </div>
+              <h3>多仓库云环境</h3>
+              <p>单个云 Agent 环境可包含多个仓库，配置跨会话复用。Agent 可推理一个仓库的变更如何影响其他仓库。新增 Dockerfile 构建密钥、层缓存重建（快 70%）、Agent 引导的凭据验证。</p>
+            </article>
+
+            <!-- Full-screen tabs -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">🖥️</div>
+              <div class="feature-meta">
+                <span class="feature-date">May 13, 2026</span>
+                <span class="feature-version">3.4</span>
+              </div>
+              <h3>全屏标签页</h3>
+              <p>全屏标签页支持沉浸式工作，配合浮动提示栏。新增紧凑聊天响应，可调节工具调用密度，获得更紧凑或更详细的 Agent 活动视图。</p>
+            </article>
+
+            <!-- PR Review -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">📋</div>
+              <div class="feature-meta">
+                <span class="feature-date">May 7, 2026</span>
+                <span class="feature-version">3.3</span>
+              </div>
+              <h3>统一 PR 审查体验</h3>
+              <p>三个标签页：Reviews（内联线程和顶级评论）、Commits（提交历史）、Changes（文件树和变更选择器）。从创建到合并一站式完成。</p>
+            </article>
+
+            <!-- Build in Parallel -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">⚡</div>
+              <div class="feature-meta">
+                <span class="feature-date">May 7, 2026</span>
+                <span class="feature-version">3.3</span>
+              </div>
+              <h3>并行构建 Build in Parallel</h3>
+              <p>识别计划中的独立部分，使用异步子代理同时运行。依赖步骤仍按顺序执行。Explore 子代理支持模型选择器，可用更小模型执行"查找相关代码"任务。</p>
+            </article>
+
+            <!-- Split PRs -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">✂️</div>
+              <div class="feature-meta">
+                <span class="feature-date">May 7, 2026</span>
+                <span class="feature-version">3.3</span>
+              </div>
+              <h3>拆分 PR Split into PRs</h3>
+              <p>分析聊天记录，按逻辑关注点分组提交，每个分组一个 PR。检测到真正依赖时添加"depends on"注释。告别四不相关变更的巨型 PR。</p>
+            </article>
+
+            <!-- Bugbot Effort Levels -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">🐛</div>
+              <div class="feature-meta">
+                <span class="feature-date">May 2026</span>
+                <span class="feature-version">Update</span>
+              </div>
+              <h3>Bugbot 可配置审查深度</h3>
+              <p>Teams 管理员和 Individual 用户可选择：Default（默认）、High（深度推理）、Custom（自然语言自定义）。Teams 和 Individual 计划改为按用量计费，取消席位费。</p>
+            </article>
+
             <!-- Canvases -->
             <article class="feature-card animate-on-scroll">
               <div class="feature-icon">🎨</div>
@@ -190,39 +334,6 @@
               <h3>Canvases 可视化画布</h3>
               <p>Agent 可以创建交互式可视化画布，包含仪表板、自定义界面，支持表格、图表、diff、待办列表等组件。画布作为持久化产物存在于侧边栏。</p>
               <a href="https://cursor.com/blog/canvas" target="_blank" rel="noopener noreferrer">了解更多 →</a>
-            </article>
-
-            <!-- Multitask -->
-            <article class="feature-card animate-on-scroll">
-              <div class="feature-icon">⚡</div>
-              <div class="feature-meta">
-                <span class="feature-date">Apr 24, 2026</span>
-                <span class="feature-version">3.2</span>
-              </div>
-              <h3>/multitask 异步并行</h3>
-              <p>使用 <code>/multitask</code> 命令，Cursor 会运行异步子代理并行处理请求，将大任务拆分为小块由多个子代理同时完成，无需排队等待。</p>
-            </article>
-
-            <!-- Worktrees -->
-            <article class="feature-card animate-on-scroll">
-              <div class="feature-icon">🌿</div>
-              <div class="feature-meta">
-                <span class="feature-date">Apr 24, 2026</span>
-                <span class="feature-version">3.2</span>
-              </div>
-              <h3>改进的 Worktrees</h3>
-              <p>在 Agents Window 中运行后台隔离任务。准备测试时，一键将任意分支移入本地前台。跨分支并行开发更顺畅。</p>
-            </article>
-
-            <!-- Multi-root -->
-            <article class="feature-card animate-on-scroll">
-              <div class="feature-icon">📁</div>
-              <div class="feature-meta">
-                <span class="feature-date">Apr 24, 2026</span>
-                <span class="feature-version">3.2</span>
-              </div>
-              <h3>Multi-root 工作区</h3>
-              <p>单个 Agent 会话可瞄准由多个文件夹组成的可复用工作区，实现跨仓库（前端、后端、共享库）修改，无需反复切换目标。</p>
             </article>
 
             <!-- SDK -->
@@ -239,7 +350,7 @@
 
             <!-- Security Review -->
             <article class="feature-card animate-on-scroll">
-              <div class="feature-icon">🛡️</div>
+              <div class="feature-icon">🔒</div>
               <div class="feature-meta">
                 <span class="feature-date">Apr 30, 2026</span>
                 <span class="feature-version">Beta</span>
@@ -247,28 +358,6 @@
               <h3>Security Review 安全审查</h3>
               <p><strong>Security Reviewer</strong> 检查每个 PR 的安全漏洞、隐私风险、提示注入攻击。<strong>Vulnerability Scanner</strong> 定期扫描代码库已知漏洞和过时依赖。支持 Slack 推送。</p>
               <a href="https://cursor.com/docs/security-review" target="_blank" rel="noopener noreferrer">了解更多 →</a>
-            </article>
-
-            <!-- Team Marketplace -->
-            <article class="feature-card animate-on-scroll">
-              <div class="feature-icon">🏪</div>
-              <div class="feature-meta">
-                <span class="feature-date">May 1, 2026</span>
-                <span class="feature-version">New</span>
-              </div>
-              <h3>Team Marketplace 团队插件市场</h3>
-              <p>管理员可创建团队专属插件市场，配置插件分发策略：Default Off（用户自选）、Default On（默认安装）、Required（强制安装）。</p>
-            </article>
-
-            <!-- Bugbot -->
-            <article class="feature-card animate-on-scroll">
-              <div class="feature-icon">🐛</div>
-              <div class="feature-meta">
-                <span class="feature-date">Apr 8, 2026</span>
-                <span class="feature-version">Update</span>
-              </div>
-              <h3>Bugbot 代码审查增强</h3>
-              <p>Bugbot 学习项目规则并支持 MCP，提供更精准的 PR 审查。Teams 和 Enterprise 计划可使用高级规则和分析仪表板。</p>
             </article>
           </div>
         </div>
@@ -304,13 +393,13 @@
           </div>
           <div class="doc-panel animate-on-scroll">
             <h3 class="doc-panel-title">官方一手信息（英文页面为主）</h3>
-            <p class="doc-panel-lead">下列链接对应本页涉及的 3.0 功能与背景叙事；无需视频即可查阅。若打不开，可稍后重试或更换网络环境。</p>
+            <p class="doc-panel-lead">下列链接对应本页涉及的 3.0-3.6 功能与背景叙事；无需视频即可查阅。若打不开，可稍后重试或更换网络环境。</p>
             <ul class="doc-link-list">
+              <li><a href="https://cursor.com/changelog" target="_blank" rel="noopener noreferrer">Changelog 最新</a><span class="doc-link-hint">3.6 Auto-review、Composer 2.5</span></li>
               <li><a href="https://cursor.com/changelog/3-0" target="_blank" rel="noopener noreferrer">Changelog 3.0</a><span class="doc-link-hint">Agents Window、Design Mode、命令与改进列表</span></li>
               <li><a href="https://cursor.com/blog/cursor-3" target="_blank" rel="noopener noreferrer">Meet Cursor 3 博文</a><span class="doc-link-hint">产品叙事与 Composer 2、云本机交接等</span></li>
               <li><a href="https://cursor.com/docs/agent/agents-window" target="_blank" rel="noopener noreferrer">Agents Window 文档</a><span class="doc-link-hint">如何打开与使用新工作区</span></li>
               <li><a href="https://cursor.com/blog/agent-computer-use" target="_blank" rel="noopener noreferrer">Agent 计算机使用</a><span class="doc-link-hint">自测、录屏验收等能力说明</span></li>
-              <li><a href="https://cursor.com/blog/third-era" target="_blank" rel="noopener noreferrer">The third era</a><span class="doc-link-hint">「第三时代」文字版</span></li>
               <li><a href="https://cursor.com/docs" target="_blank" rel="noopener noreferrer">Docs 总目录</a><span class="doc-link-hint">浏览器工具、MCP、Rules、Cloud Agent 等</span></li>
             </ul>
           </div>
@@ -322,7 +411,7 @@
         <div class="container">
           <p class="section-label">版本演进</p>
           <h2 class="section-title">大版本升级脉络</h2>
-          <p class="section-desc">下面是官方叙事里的几个「分水岭」：从<strong>编辑器里加 AI</strong>，到<strong>多 Agent 并行</strong>，再到<strong>全新 Agent 优先界面</strong>。</p>
+          <p class="section-desc">下面是官方叙事里的几个「分水岭」：从<strong>编辑器里加 AI</strong>，到<strong>多 Agent 并行</strong>，再到<strong>全新 Agent 优先界面</strong>，现在进入<strong>智能审查与自动化时代</strong>。</p>
           <ol class="timeline" role="list">
             <li class="timeline-item">
               <div class="timeline-marker" aria-hidden="true"></div>
@@ -371,6 +460,30 @@
                   <li>可随时回到经典 IDE；也可本地/云端会话互迁</li>
                 </ul>
                 <p class="timeline-more"><a href="https://cursor.com/changelog/3-0" target="_blank" rel="noopener noreferrer">Changelog 3.0 全文</a></p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-card">
+                <span class="timeline-era">3.3 · 2026 年 5 月 7 日</span>
+                <h3 class="timeline-title">并行构建与 PR 工作流</h3>
+                <p class="timeline-body">引入<strong>并行构建</strong>（子代理同时处理独立步骤）、<strong>拆分 PR</strong>（按逻辑分组提交）、<strong>统一 PR 审查</strong>（Reviews/Commits/Changes 三标签页）。</p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-card">
+                <span class="timeline-era">3.4-3.5 · 2026 年 5 月 13-20 日</span>
+                <h3 class="timeline-title">云环境工业化 & 自动化扩展</h3>
+                <p class="timeline-body">多仓库云环境、Dockerfile 构建密钥、70% 更快重建。<strong>共享画布</strong>、<strong>/loop 循环任务</strong>、多仓库/无仓库自动化。集成 Jira 和 Microsoft Teams。</p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-card">
+                <span class="timeline-era">3.6 · 2026 年 5 月 29 日</span>
+                <h3 class="timeline-title">Auto-review 与 Composer 2.5</h3>
+                <p class="timeline-body"><strong>Auto-review</strong> 减少审批疲劳：白名单立即执行、沙盒安全运行、分类子 Agent 自主决策。<strong>Composer 2.5</strong> 智能大幅提升，长任务和复杂指令表现更佳。</p>
               </div>
             </li>
           </ol>
@@ -476,7 +589,7 @@
           </div>
 
           <div class="pricing-note">
-            <p>另有 <strong>Bugbot</strong> 代码审查服务：Pro $40/用户/月，Teams $40/用户/月。<a href="https://cursor.com/pricing" target="_blank" rel="noopener noreferrer">查看完整定价 →</a></p>
+            <p>另有 <strong>Bugbot</strong> 代码审查服务：现改为按用量计费（Teams/Individual），可配置审查深度（Default/High/Custom）。<a href="https://cursor.com/pricing" target="_blank" rel="noopener noreferrer">查看完整定价 →</a></p>
           </div>
         </div>
       </section>
@@ -491,6 +604,7 @@
             <ul class="checklist">
               <li>统一侧栏汇总进行中的 Agent（各渠道以官方支持为准）</li>
               <li>云与本机快速交接，适合长任务与回到桌面调试</li>
+              <li>集成 Jira、Microsoft Teams、Slack、GitHub、Linear</li>
             </ul>
             <p class="source-note"><a href="https://cursor.com/changelog/3-0" target="_blank" rel="noopener noreferrer">cursor.com/changelog/3-0</a></p>
           </div>
@@ -531,15 +645,16 @@
         <div class="container narrow-block">
           <p class="section-label">编辑器</p>
           <h2 class="section-title">Agent Tabs 与命令</h2>
-          <p class="section-desc"><strong>Agent Tabs</strong> 支持并排或网格查看多会话。<code>/worktree</code> 与 <code>/best-of-n</code> 成为编辑器内新入口；旧选型方式已废弃；云端 Agent 已从编辑器移除（见官方 changelog）。</p>
+          <p class="section-desc"><strong>Agent Tabs</strong> 支持并排或网格查看多会话。<code>/worktree</code> 与 <code>/best-of-n</code> 成为编辑器内新入口；<code>/loop</code> 支持循环任务；<code>/multitask</code> 支持异步并行。</p>
           <ul class="checklist checklist-tight">
             <li><code>/worktree</code>：单独 git worktree，实验性改动与主分支隔离。</li>
             <li><code>/best-of-n</code>：多模型并行尝试同一任务，各自 worktree，便于横向对比质量。</li>
+            <li><code>/loop</code>：按计划重复运行，直到达成目标。适合监控和长时间任务。</li>
+            <li><code>/multitask</code>：异步子代理并行处理，将大任务拆分同时执行。</li>
             <li>大文件 diff 渲染更快、更省内存；Agent 对长耗时任务监控更稳。</li>
             <li>新增 <code>Await</code> 工具：可等待后台 shell、子 Agent 或特定输出，减少盲等重试。</li>
-            <li>共享对话中会附带 Plans；浏览器自动化工具面收敛，并支持截图坐标点击兜底。</li>
           </ul>
-          <p class="source-note">以上摘录自 <a href="https://cursor.com/changelog/3-0" target="_blank" rel="noopener noreferrer">3.0 changelog</a>「Editor / Other」等小节。</p>
+          <p class="source-note">以上摘录自 <a href="https://cursor.com/changelog/3-0" target="_blank" rel="noopener noreferrer">3.0 changelog</a> 及后续版本更新。</p>
         </div>
       </section>
 
@@ -565,13 +680,15 @@
                 <tr><th scope="row">插件市场 / MCP 生态</th><td><span class="dot strong" title="强：Marketplace"></span></td><td><span class="dot mid" title="中：Extensions"></span></td><td><span class="dot strong" title="强：MCP 原生"></span></td></tr>
                 <tr><th scope="row">交互式可视化画布</th><td><span class="dot strong" title="强：Canvases"></span></td><td><span class="dot weak" title="弱"></span></td><td><span class="dot weak" title="弱"></span></td></tr>
                 <tr><th scope="row">代码审查 / PR 管理</th><td><span class="dot strong" title="强：Bugbot"></span></td><td><span class="dot strong" title="强：Copilot Review"></span></td><td><span class="dot weak" title="弱"></span></td></tr>
+                <tr><th scope="row">智能审查 / 减少审批</th><td><span class="dot strong" title="强：Auto-review"></span></td><td><span class="dot weak" title="弱"></span></td><td><span class="dot mid" title="中"></span></td></tr>
+                <tr><th scope="row">第三方集成（Jira/Teams/Slack）</th><td><span class="dot strong" title="强"></span></td><td><span class="dot strong" title="强：GitHub 原生"></span></td><td><span class="dot mid" title="中"></span></td></tr>
                 <tr><th scope="row">定价起步</th><td>免费 / $20/月</td><td>免费 / $10/月</td><td>按 token 计费</td></tr>
                 <tr><th scope="row">离线 / 本地模型</th><td><span class="dot weak" title="弱"></span></td><td><span class="dot mid" title="中：本地模型可选"></span></td><td><span class="dot weak" title="弱"></span></td></tr>
               </tbody>
             </table>
           </div>
           <div class="insight-cards">
-            <article class="insight-card animate-on-scroll"><h3>更偏 Cursor 的场景</h3><p>长期待在 VS Code 系界面；要 LSP、内置浏览器、多 Agent 面板、Design Mode、Canvases 可视化、Security Review 一体完成前端与全栈迭代。需要 SDK 构建可编程代理。</p></article>
+            <article class="insight-card animate-on-scroll"><h3>更偏 Cursor 的场景</h3><p>长期待在 VS Code 系界面；要 LSP、内置浏览器、多 Agent 面板、Design Mode、Canvases 可视化、Security Review、Auto-review 一体完成前端与全栈迭代。需要 SDK 构建可编程代理。</p></article>
             <article class="insight-card animate-on-scroll"><h3>更偏 Copilot 的场景</h3><p>已在 JetBrains / Visual Studio 等环境投入大量配置；希望以较低切换成本获得补全与 Chat / Agent 能力。依赖微软生态和 GitHub 集成。</p></article>
             <article class="insight-card animate-on-scroll"><h3>更偏 Claude Code 的场景</h3><p>习惯终端与脚本化任务；希望 Agent 以仓库为中心自主多步修改，编辑器仅作查看或辅助。重视 MCP 原生集成和 token 灵活计费。</p></article>
           </div>
@@ -594,8 +711,8 @@
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>功能摘要来自 <a href="https://cursor.com/changelog/3-0" target="_blank" rel="noopener noreferrer">官方 Changelog</a>；演进时间线引用 1.x/2.0/Composer 2/3.0 公开博文与 changelog；内嵌视频为<strong>哔哩哔哩第三方教程</strong>。竞品对比为定性归纳，请以各厂商文档为准。</p>
-        <p class="muted">本页为静态演示站点，可自由修改与再发布。</p>
+        <p>功能摘要来自 <a href="https://cursor.com/changelog" target="_blank" rel="noopener noreferrer">官方 Changelog</a>；演进时间线引用 1.x/2.0/Composer 2/3.0-3.6 公开博文与 changelog；内嵌视频为<strong>哔哩哔哩第三方教程</strong>。竞品对比为定性归纳，请以各厂商文档为准。</p>
+        <p class="muted">本页为静态演示站点，可自由修改与再发布。最后更新：2026 年 5 月 31 日</p>
       </div>
     </footer>
 
