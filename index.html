@@ -34,6 +34,7 @@
         <nav class="nav" aria-label="页面导航">
           <a href="#visual">一览</a>
           <a href="#highlights">亮点</a>
+          <a href="#composer-25">Composer 2.5</a>
           <a href="#new-features">新功能</a>
           <a href="#media">影像</a>
           <a href="#timeline">演进</a>
@@ -363,6 +364,56 @@
         </div>
       </section>
 
+
+      <!-- Composer 2.5 Deep Dive -->
+      <section id="composer-25" class="section">
+        <div class="container">
+          <p class="section-label">核心模型</p>
+          <h2 class="section-title">Composer 2.5 深度解析</h2>
+          <p class="section-desc">Cursor 自研编码模型最新版本，基于 <strong>Kimi K2.5</strong> 开源检查点，通过大规模强化学习训练。在多项基准测试中匹配 Claude Opus 4.7 和 GPT-5.5，但成本仅为 <strong>1/10 ~ 1/60</strong>。</p>
+          
+          <div class="compare-wrap animate-on-scroll" style="margin-bottom:32px">
+            <table class="compare-table">
+              <thead><tr><th scope="col">基准测试</th><th scope="col">Composer 2.5</th><th scope="col">Opus 4.7</th><th scope="col">GPT-5.5</th><th scope="col">Composer 2</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">SWE-Bench Multilingual</th><td><strong>79.8%</strong></td><td>80.5%</td><td>77.8%</td><td>73.7%</td></tr>
+                <tr><th scope="row">Terminal-Bench 2.0</th><td>69.3%</td><td>69.4%</td><td><strong>82.7%</strong></td><td>61.7%</td></tr>
+                <tr><th scope="row">CursorBench v3.1</th><td><strong>63.2%</strong></td><td>61.6%</td><td>59.2%</td><td>52.2%</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="bento">
+            <article class="bento-card animate-on-scroll">
+              <div class="bento-icon" aria-hidden="true">💰</div>
+              <h3>成本优势</h3>
+              <p>Standard: <strong>$0.50/$2.50</strong>/M tokens（~$0.07/任务）。Fast: <strong>$3/$15</strong>/M tokens（~$0.44/任务）。Opus 4.7 约 $4.10/任务，GPT-5.5 约 $4.82/任务。</p>
+            </article>
+            <article class="bento-card animate-on-scroll">
+              <div class="bento-icon" aria-hidden="true">🎯</div>
+              <h3>定向强化学习</h3>
+              <p>在错误点直接注入修正提示，而非等到任务结束。25 倍合成任务训练，包括"功能删除"等复杂场景。</p>
+            </article>
+            <article class="bento-card animate-on-scroll">
+              <div class="bento-icon" aria-hidden="true">⚡</div>
+              <h3>Fast 变体</h3>
+              <p>比 Standard 快 30%，平均 6.7 分钟/任务。成本约 Standard 的 6 倍。默认启用。</p>
+            </article>
+          </div>
+
+          <div class="doc-panel animate-on-scroll" style="margin-top:32px">
+            <h3 class="doc-panel-title">外部评测</h3>
+            <ul class="doc-link-list">
+              <li><a href="https://cursor.com/blog/composer-2-5" target="_blank" rel="noopener noreferrer">官方博文</a><span class="doc-link-hint">技术细节</span></li>
+              <li><a href="https://artificialanalysis.ai/articles/cursor-composer-2-5-coding-agent-index" target="_blank" rel="noopener noreferrer">Artificial Analysis</a><span class="doc-link-hint">Coding Agent Index 第三</span></li>
+              <li><a href="https://rawpickai.com/blog/composer-2-5-review" target="_blank" rel="noopener noreferrer">RawPickAI 实测</a><span class="doc-link-hint">8 任务实测，4.2/5</span></li>
+              <li><a href="https://www.ai.cc/blogs/composer-2-5-review-cursor-ai-deep-dive-benchmarks-real-world-testing/" target="_blank" rel="noopener noreferrer">AI.cc 深度评测</a><span class="doc-link-hint">48h 实测，9.2/10</span></li>
+              <li><a href="https://bdtechtalks.com/2026/05/25/composer-25-llm-self-distillation/" target="_blank" rel="noopener noreferrer">TechTalks</a><span class="doc-link-hint">自蒸馏技术解析</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <!-- Media -->
       <section id="media" class="section">
         <div class="container">
@@ -664,33 +715,59 @@
           <p class="section-label">竞品</p>
           <h2 class="section-title">维度对比（定性）</h2>
           <p class="section-desc">下表为<strong>产品形态与常见用法</strong>的归纳，便于讨论；不包含实时价格与功能开关细节——请以各产品官网为准。</p>
+          <p style="font-size:14px;color:var(--text-sec);margin-bottom:16px;text-align:center">还包括 <strong>Windsurf</strong>、<strong>Augment Code</strong>、<strong>Replit</strong>、<strong>Aider</strong> 等竞品</p>
           <div class="compare-wrap animate-on-scroll">
             <table class="compare-table">
-              <thead><tr><th scope="col">维度</th><th scope="col">Cursor</th><th scope="col">GitHub Copilot</th><th scope="col">Claude Code</th></tr></thead>
+              <thead><tr><th scope="col">维度</th><th scope="col">Cursor</th><th scope="col">Windsurf</th><th scope="col">Copilot</th><th scope="col">Claude Code</th><th scope="col">Augment</th></tr></thead>
               <tbody>
-                <tr><th scope="row">主界面形态</th><td>独立 AI IDE（VS Code 分支）</td><td>多编辑器插件</td><td>终端 / CLI Agent</td></tr>
-                <tr><th scope="row">IDE 内联编辑、LSP、调试一体</th><td><span class="dot strong" title="强"></span></td><td><span class="dot mid" title="中"></span></td><td><span class="dot weak" title="弱"></span></td></tr>
-                <tr><th scope="row">多 Agent 编排、并行会话</th><td><span class="dot strong" title="强"></span></td><td><span class="dot mid" title="中"></span></td><td><span class="dot strong" title="强"></span></td></tr>
-                <tr><th scope="row">可视化 UI 指定、浏览器批注</th><td><span class="dot strong" title="强"></span></td><td><span class="dot weak" title="弱"></span></td><td><span class="dot weak" title="弱"></span></td></tr>
-                <tr><th scope="row">「不换编辑器」—— JetBrains 等</th><td><span class="dot weak" title="弱"></span></td><td><span class="dot strong" title="强"></span></td><td><span class="dot strong" title="强"></span></td></tr>
-                <tr><th scope="row">团队合规、微软生态一体</th><td><span class="dot mid" title="中"></span></td><td><span class="dot strong" title="强"></span></td><td><span class="dot mid" title="中"></span></td></tr>
-                <tr><th scope="row">Cloud / 远程 Agent</th><td><span class="dot strong" title="强"></span></td><td><span class="dot mid" title="中"></span></td><td><span class="dot weak" title="弱"></span></td></tr>
-                <tr><th scope="row">SDK / 可编程代理</th><td><span class="dot strong" title="强：TypeScript SDK"></span></td><td><span class="dot weak" title="弱"></span></td><td><span class="dot mid" title="中：CLI 集成"></span></td></tr>
-                <tr><th scope="row">安全审查 / 漏洞扫描</th><td><span class="dot strong" title="强：Security Review"></span></td><td><span class="dot mid" title="中：Dependabot"></span></td><td><span class="dot weak" title="弱"></span></td></tr>
-                <tr><th scope="row">插件市场 / MCP 生态</th><td><span class="dot strong" title="强：Marketplace"></span></td><td><span class="dot mid" title="中：Extensions"></span></td><td><span class="dot strong" title="强：MCP 原生"></span></td></tr>
-                <tr><th scope="row">交互式可视化画布</th><td><span class="dot strong" title="强：Canvases"></span></td><td><span class="dot weak" title="弱"></span></td><td><span class="dot weak" title="弱"></span></td></tr>
-                <tr><th scope="row">代码审查 / PR 管理</th><td><span class="dot strong" title="强：Bugbot"></span></td><td><span class="dot strong" title="强：Copilot Review"></span></td><td><span class="dot weak" title="弱"></span></td></tr>
-                <tr><th scope="row">智能审查 / 减少审批</th><td><span class="dot strong" title="强：Auto-review"></span></td><td><span class="dot weak" title="弱"></span></td><td><span class="dot mid" title="中"></span></td></tr>
-                <tr><th scope="row">第三方集成（Jira/Teams/Slack）</th><td><span class="dot strong" title="强"></span></td><td><span class="dot strong" title="强：GitHub 原生"></span></td><td><span class="dot mid" title="中"></span></td></tr>
-                <tr><th scope="row">定价起步</th><td>免费 / $20/月</td><td>免费 / $10/月</td><td>按 token 计费</td></tr>
-                <tr><th scope="row">离线 / 本地模型</th><td><span class="dot weak" title="弱"></span></td><td><span class="dot mid" title="中：本地模型可选"></span></td><td><span class="dot weak" title="弱"></span></td></tr>
+                <tr><th scope="row">产品类型</th><td>AI 原生 IDE</td><td>AI 原生 IDE</td><td>多编辑器插件</td><td>终端 Agent</td><td>IDE 扩展</td></tr>
+                <tr><th scope="row">自研模型</th><td>Composer 2.5</td><td>SWE-1.6</td><td>无</td><td>无</td><td>Context Engine</td></tr>
+                <tr><th scope="row">多 Agent 编排</th><td><span class="dot strong"></span></td><td><span class="dot mid"></span></td><td><span class="dot mid"></span></td><td><span class="dot strong"></span></td><td><span class="dot mid"></span></td></tr>
+                <tr><th scope="row">Cloud Agent</th><td><span class="dot strong"></span></td><td><span class="dot weak"></span></td><td><span class="dot mid"></span></td><td><span class="dot weak"></span></td><td><span class="dot weak"></span></td></tr>
+                <tr><th scope="row">大型代码库理解</th><td><span class="dot mid"></span></td><td><span class="dot mid"></span></td><td><span class="dot mid"></span></td><td><span class="dot mid"></span></td><td><span class="dot strong"></span></td></tr>
+                <tr><th scope="row">免费层级</th><td>有限</td><td><span class="dot strong">最慷慨</span></td><td>有限</td><td>按量</td><td>无</td></tr>
+                <tr><th scope="row">隐私/自托管</th><td><span class="dot mid"></span></td><td><span class="dot mid"></span></td><td><span class="dot mid"></span></td><td><span class="dot weak"></span></td><td><span class="dot strong">SOC 2</span></td></tr>
+                
+                
+                
+                
+                
+                
+                
+                <tr><th scope="row">定价起步</th><td>免费/$20</td><td>免费/$15</td><td>免费/$10</td><td>按 token</td><td>$30</td></tr>
+                
               </tbody>
             </table>
           </div>
+          <!-- 竞品详解 -->
+          <div class="bento" style="margin-top:24px">
+            <article class="bento-card animate-on-scroll">
+              <div class="bento-icon" aria-hidden="true">🌊</div>
+              <h3>Windsurf（原 Codeium）</h3>
+              <p>VS Code 分支，主打 <strong>Cascade</strong> 多步推理。被 Cognition（Devin 母公司）$30 亿收购。免费层级最慷慨，$15/月 Pro。</p>
+            </article>
+            <article class="bento-card animate-on-scroll">
+              <div class="bento-icon" aria-hidden="true">🏢</div>
+              <h3>Augment Code</h3>
+              <p>企业级上下文引擎，索引 <strong>100 万文件</strong>。理解跨仓库依赖和团队编码模式。$30/月 Pro，SOC 2 认证。</p>
+            </article>
+            <article class="bento-card animate-on-scroll">
+              <div class="bento-icon" aria-hidden="true">🚀</div>
+              <h3>Replit Agent</h3>
+              <p>浏览器 IDE + 全栈部署一体化。从提示到部署仅需几分钟。$25/月，适合快速原型和非开发者。</p>
+            </article>
+            <article class="bento-card animate-on-scroll">
+              <div class="bento-icon" aria-hidden="true">⌨️</div>
+              <h3>Aider</h3>
+              <p>开源终端 Agent，Git 原生。完全免费（需 API key），支持本地模型。适合终端重度用户。</p>
+            </article>
+          </div>
+
           <div class="insight-cards">
-            <article class="insight-card animate-on-scroll"><h3>更偏 Cursor 的场景</h3><p>长期待在 VS Code 系界面；要 LSP、内置浏览器、多 Agent 面板、Design Mode、Canvases 可视化、Security Review、Auto-review 一体完成前端与全栈迭代。需要 SDK 构建可编程代理。</p></article>
-            <article class="insight-card animate-on-scroll"><h3>更偏 Copilot 的场景</h3><p>已在 JetBrains / Visual Studio 等环境投入大量配置；希望以较低切换成本获得补全与 Chat / Agent 能力。依赖微软生态和 GitHub 集成。</p></article>
-            <article class="insight-card animate-on-scroll"><h3>更偏 Claude Code 的场景</h3><p>习惯终端与脚本化任务；希望 Agent 以仓库为中心自主多步修改，编辑器仅作查看或辅助。重视 MCP 原生集成和 token 灵活计费。</p></article>
+            <article class="insight-card animate-on-scroll"><h3>更偏 Cursor</h3><p>需要 LSP、内置浏览器、多 Agent、Design Mode、Canvases、Auto-review 一体完成全栈迭代。Composer 2.5 成本优势显著。</p></article>
+            <article class="insight-card animate-on-scroll"><h3>更偏 Windsurf</h3><p>预算敏感，首次评估 AI IDE。需要 Cascade 多步推理和最慷慨免费层级。</p></article>
+            <article class="insight-card animate-on-scroll"><h3>更偏 Augment</h3><p>大型单体仓库（10 万-100 万行），需要跨仓库依赖理解。企业级合规需求。</p></article>
+            <article class="insight-card animate-on-scroll"><h3>更偏 Claude Code / Aider</h3><p>终端重度用户，需要自主多步修改。重视 MCP 原生、token 灵活计费、完全开源。</p></article>
           </div>
         </div>
       </section>
