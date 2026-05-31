@@ -3,32 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Cursor 3.0 intro: embedded videos, official docs, 1.x→2.0→3.0 evolution, Agents Window, Design Mode, and competitor comparison." />
+    <meta name="description" content="Cursor 3.x intro: Auto-review, Composer 2.5, Shared Canvases, /loop, Agents Window, Design Mode, and competitor comparison. 3.0→3.6 evolution." />
     <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#1d1d1f" media="(prefers-color-scheme: dark)" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Cursor 3.0 · Visual Introduction" />
+    <meta property="og:title" content="Cursor 3.x · Visual Introduction" />
     <meta property="og:locale" content="en_US" />
     <link rel="manifest" href="../manifest.json" />
     <link rel="preconnect" href="https://fonts.bunny.net" crossorigin />
     <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700|jetbrains-mono:400,500,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/css/style.css" />
-    <title>Cursor 3.0 · Visual Introduction</title>
+    <title>Cursor 3.x · Visual Introduction</title>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">
       <div class="container header-inner">
-        <a class="logo" href="../">Cursor <span class="logo-ver">3</span></a>
+        <a class="logo" href="../">Cursor <span class="logo-ver">3.x</span></a>
         <nav class="nav" aria-label="Page navigation">
-          <a href="#visual">Overview</a>
           <a href="#highlights">Highlights</a>
-          <a href="#media">Media</a>
+          <a href="#new-features">New Features</a>
           <a href="#timeline">Timeline</a>
-          <a href="#agents-window">Agents</a>
-          <a href="#design-mode">Design</a>
-          <a href="#editor">Editor</a>
+          <a href="#pricing">Pricing</a>
           <a href="#compare">Compare</a>
           <a href="#start">Try It</a>
         </nav>
@@ -43,12 +40,12 @@
       <section class="hero">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow">Changelog 3.0 · April 2, 2026</p>
+            <p class="eyebrow">Changelog 3.6 · May 29, 2026</p>
             <h1>An Agent-centric<br />unified workspace.</h1>
-            <p class="lead">Orchestrate multiple Agents across local, worktree, cloud, and SSH in parallel; instantly return to full IDE depth when needed. Below, diagrams and comparison tables place Cursor 3 alongside competitors in the same framework.</p>
+            <p class="lead">Orchestrate multiple Agents across local, worktree, cloud, and SSH in parallel; instantly return to full IDE depth when needed. Cursor 3.x brings Auto-review, Composer 2.5, Shared Canvases, /loop, and more.</p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="https://cursor.com/blog/cursor-3" target="_blank" rel="noopener noreferrer">Official Release</a>
-              <a class="btn btn-secondary" href="https://cursor.com/changelog/3-0" target="_blank" rel="noopener noreferrer">Changelog</a>
+              <a class="btn btn-secondary" href="https://cursor.com/changelog" target="_blank" rel="noopener noreferrer">Changelog</a>
             </div>
             <p class="font-note">Fonts: <strong>Inter</strong>, <strong>JetBrains Mono</strong> (Bunny Fonts · SIL OFL)</p>
           </div>
@@ -75,49 +72,6 @@
         </div>
       </section>
 
-      <!-- Visual -->
-      <section id="visual" class="section">
-        <div class="container">
-          <p class="section-label">Visualization</p>
-          <h2 class="section-title">Three approaches to "AI coding"</h2>
-          <p class="section-desc">Not about absolute superiority, but <strong>different interaction focal points</strong>: plugin completion, in-IDE Agent, and terminal Agent.</p>
-          <figure class="diagram-card animate-on-scroll">
-            <svg class="diagram-svg" viewBox="0 0 960 280" role="img" aria-labelledby="diagram-title-en diagram-desc-en">
-              <title id="diagram-title-en">Cursor, GitHub Copilot, Claude Code product form comparison</title>
-              <desc id="diagram-desc-en">Three columns representing AI-native IDE, multi-editor plugin, and terminal Agent typical structures.</desc>
-              <defs>
-                <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1" class="svg-grad-blue"><stop offset="0%" stop-color="#0071e3" stop-opacity="0.12"/><stop offset="100%" stop-color="#0071e3" stop-opacity="0.02"/></linearGradient>
-                <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1" class="svg-grad-green"><stop offset="0%" stop-color="#34c759" stop-opacity="0.1"/><stop offset="100%" stop-color="#34c759" stop-opacity="0.02"/></linearGradient>
-                <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1" class="svg-grad-purple"><stop offset="0%" stop-color="#af52de" stop-opacity="0.1"/><stop offset="100%" stop-color="#af52de" stop-opacity="0.02"/></linearGradient>
-              </defs>
-              <rect x="24" y="32" width="280" height="216" rx="20" fill="url(#g1)" class="svg-card-blue"/>
-              <text x="164" y="64" text-anchor="middle" class="svg-label">Cursor</text>
-              <text x="164" y="88" text-anchor="middle" class="svg-caption">AI-native IDE</text>
-              <rect x="48" y="108" width="232" height="44" rx="8" class="svg-rect-light"/>
-              <rect x="48" y="164" width="112" height="72" rx="8" class="svg-rect-light"/>
-              <rect x="168" y="164" width="112" height="72" rx="8" class="svg-rect-accent"/>
-              <text x="104" y="136" text-anchor="middle" class="svg-mini">Editor / LSP</text>
-              <text x="104" y="202" text-anchor="middle" class="svg-mini">File Tree</text>
-              <text x="224" y="202" text-anchor="middle" class="svg-mini">Agents</text>
-              <rect x="340" y="32" width="280" height="216" rx="20" fill="url(#g2)" class="svg-card-green"/>
-              <text x="480" y="64" text-anchor="middle" class="svg-label">GitHub Copilot</text>
-              <text x="480" y="88" text-anchor="middle" class="svg-caption">Host IDE Plugin</text>
-              <rect x="364" y="108" width="232" height="128" rx="8" class="svg-rect-light"/>
-              <text x="480" y="140" text-anchor="middle" class="svg-mini">JetBrains / VS Code / …</text>
-              <rect x="388" y="156" width="184" height="64" rx="8" class="svg-rect-green"/>
-              <text x="480" y="194" text-anchor="middle" class="svg-mini">Completion · Chat · Agent</text>
-              <rect x="656" y="32" width="280" height="216" rx="20" fill="url(#g3)" class="svg-card-purple"/>
-              <text x="796" y="64" text-anchor="middle" class="svg-label">Claude Code</text>
-              <text x="796" y="88" text-anchor="middle" class="svg-caption">Terminal-first Agent</text>
-              <rect x="680" y="108" width="232" height="128" rx="8" fill="#1d1d1f"/>
-              <text x="796" y="148" text-anchor="middle" fill="#f5f5f7" class="svg-mini">$ command · session</text>
-              <text x="796" y="176" text-anchor="middle" fill="#a1a1a6" class="svg-mini">Direct repo edits · Toolchain-driven</text>
-            </svg>
-            <figcaption class="diagram-caption">Cursor elevates "orchestrating Agents" to the same level as editing; Copilot relies on existing editor ecosystems; Claude Code makes the terminal its main stage.</figcaption>
-          </figure>
-        </div>
-      </section>
-
       <!-- Highlights -->
       <section id="highlights" class="section section-tint">
         <div class="container">
@@ -127,7 +81,7 @@
             <article class="bento-card bento-large animate-on-scroll">
               <div class="bento-icon" aria-hidden="true">◇</div>
               <h3>Agents Window</h3>
-              <p>New Agent-first interface supporting parallel execution across local, worktree, cloud, and SSH. Unified sidebar manages all Agents, including those from mobile, web, Slack, GitHub, and Linear. Cloud Agents auto-generate demos and screenshots for verification.</p>
+              <p>New Agent-first interface supporting parallel execution across local, worktree, cloud, and SSH. Unified sidebar manages all Agents, including those from mobile, web, Slack, GitHub, Linear, Jira, and Microsoft Teams. Cloud Agents auto-generate demos and screenshots for verification.</p>
               <ul class="bento-list">
                 <li>Native multi-repo support</li>
                 <li>Seamless local↔cloud handoff</li>
@@ -140,24 +94,146 @@
               <p>Annotate and select UI elements directly in the built-in browser for precise Agent feedback. Keyboard shortcuts: ⌘⇧D to toggle, ⇧+drag to select, ⌘L to add to chat.</p>
             </article>
             <article class="bento-card animate-on-scroll">
-              <div class="bento-icon" aria-hidden="true">▦</div>
-              <h3>Agent Tabs</h3>
-              <p>Side-by-side or grid view for comparing different approaches. Supports <code>/multitask</code> async subagents to parallelize and break down larger tasks simultaneously.</p>
+              <div class="bento-icon" aria-hidden="true">⎔</div>
+              <h3>Auto-review</h3>
+              <p><strong>New in 3.6</strong>: Run mode that reduces approval fatigue. Allowlisted commands run immediately, sandboxed tasks execute safely, other requests routed to a classifier subagent for autonomous decision-making.</p>
             </article>
             <article class="bento-card animate-on-scroll">
-              <div class="bento-icon" aria-hidden="true">⎇</div>
-              <h3><code>/worktree</code></h3>
-              <p>Create isolated git worktrees for experimental changes separate from main branch. Run multiple background tasks, then bring any branch to foreground with one click.</p>
+              <div class="bento-icon" aria-hidden="true">↻</div>
+              <h3><code>/loop</code></h3>
+              <p><strong>New in 3.5</strong>: Run a prompt repeatedly on a schedule until a goal is met or stopped. Great for monitoring deploy status, continuous testing, and long-running tasks.</p>
             </article>
             <article class="bento-card animate-on-scroll">
-              <div class="bento-icon" aria-hidden="true">≋</div>
-              <h3><code>/best-of-n</code></h3>
-              <p>Multiple models attempt the same task in parallel, each in its own worktree. Compare results and merge the best solution. Ideal for exploratory tasks and quality comparison.</p>
+              <div class="bento-icon" aria-hidden="true">🧠</div>
+              <h3>Composer 2.5</h3>
+              <p><strong>New in 3.6</strong>: Major intelligence upgrade. Better at sustained work on long-running tasks, follows complex instructions more reliably, smoother collaboration experience.</p>
             </article>
             <article class="bento-card bento-wide animate-on-scroll">
               <div class="bento-icon" aria-hidden="true">⎘</div>
               <h3>MCP Structured Output & Marketplace</h3>
-              <p>Tools return richer structured data. Marketplace offers hundreds of plugins (MCP, Skills, Subagents, Rules, Hooks) with one-click install. Teams can create private marketplaces with distribution policies: Default Off / Default On / Required.</p>
+              <p>Tools return richer structured data. Marketplace offers hundreds of plugins (MCP, Skills, Subagents, Rules, Hooks) with one-click install. Teams can create private marketplaces with distribution policies.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- New Features (3.3 - 3.6) -->
+      <section id="new-features" class="section">
+        <div class="container">
+          <p class="section-label">3.3 → 3.6 Updates</p>
+          <h2 class="section-title">Latest Feature Updates</h2>
+          <p class="section-desc">Cursor 3.0 has been continuously iterating, bringing <strong>Auto-review</strong>, <strong>Composer 2.5</strong>, <strong>Shared Canvases</strong>, <strong>Build in Parallel</strong>, and more.</p>
+          
+          <div class="feature-grid">
+            <!-- Auto-review -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">🛡️</div>
+              <div class="feature-meta">
+                <span class="feature-date">May 29, 2026</span>
+                <span class="feature-version">3.6</span>
+              </div>
+              <h3>Auto-review Mode</h3>
+              <p>New run mode that reduces approval fatigue. Allowlisted commands execute immediately, sandboxed tasks run safely, other requests routed to a classifier subagent that decides: allow, try different approach, or ask for approval. Custom instructions supported.</p>
+              <a href="https://cursor.com/changelog" target="_blank" rel="noopener noreferrer">Learn more →</a>
+            </article>
+
+            <!-- Composer 2.5 -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">🧠</div>
+              <div class="feature-meta">
+                <span class="feature-date">May 18, 2026</span>
+                <span class="feature-version">3.6</span>
+              </div>
+              <h3>Composer 2.5</h3>
+              <p>Major intelligence upgrade: better sustained work on long tasks, more reliable complex instruction following, smoother collaboration. New faster tier, double usage for first week.</p>
+            </article>
+
+            <!-- Shared Canvases -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">🎨</div>
+              <div class="feature-meta">
+                <span class="feature-date">May 20, 2026</span>
+                <span class="feature-version">3.5</span>
+              </div>
+              <h3>Shared Canvases</h3>
+              <p>Share interactive canvases (reports, dashboards, custom interfaces) created by Agents with your team. Recipients can open live snapshots in the browser without logging into Cursor. View team's shared canvases in Dashboard.</p>
+            </article>
+
+            <!-- /loop -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">↻</div>
+              <div class="feature-meta">
+                <span class="feature-date">May 20, 2026</span>
+                <span class="feature-version">3.5</span>
+              </div>
+              <h3><code>/loop</code> Skill</h3>
+              <p>Run a prompt repeatedly on a local schedule until a goal is achieved or stopped. If no fixed interval specified, the agent decides when to wake. Examples: "check deploy status every 5 minutes", "work on feature until tests pass".</p>
+            </article>
+
+            <!-- Automations -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">⚙️</div>
+              <div class="feature-meta">
+                <span class="feature-date">May 20, 2026</span>
+                <span class="feature-version">3.5</span>
+              </div>
+              <h3>Automations Enhanced</h3>
+              <p>Automations now available in Agents Window. Support multi-repo automations (reason across codebases) and no-repo automations (monitor tool signals). 5 new no-repo templates: Slack digest, product analytics, FAQ, finance, customer health.</p>
+            </article>
+
+            <!-- Jira & Teams -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">🔗</div>
+              <div class="feature-meta">
+                <span class="feature-date">May 19-20, 2026</span>
+                <span class="feature-version">3.5</span>
+              </div>
+              <h3>Jira & Microsoft Teams Integration</h3>
+              <p>Assign work items to Cursor in Jira, or @Cursor in comments to kick off cloud agents. Microsoft Teams support lets you @Cursor to delegate tasks or pull information into Teams.</p>
+            </article>
+
+            <!-- Multi-repo Environments -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">📁</div>
+              <div class="feature-meta">
+                <span class="feature-date">May 13, 2026</span>
+                <span class="feature-version">3.4</span>
+              </div>
+              <h3>Multi-repo Cloud Environments</h3>
+              <p>Single cloud Agent environment can include multiple repos, config reused across sessions. Agents reason about cross-repo impacts. New Dockerfile build secrets, 70% faster rebuilds via layer caching, agent-led credential validation.</p>
+            </article>
+
+            <!-- PR Review -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">📋</div>
+              <div class="feature-meta">
+                <span class="feature-date">May 7, 2026</span>
+                <span class="feature-version">3.3</span>
+              </div>
+              <h3>Unified PR Review</h3>
+              <p>Three tabs: Reviews (inline threads and top-level comments), Commits (commit history), Changes (file tree and changes picker). End-to-end from creation to merge in one place.</p>
+            </article>
+
+            <!-- Build in Parallel -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">⚡</div>
+              <div class="feature-meta">
+                <span class="feature-date">May 7, 2026</span>
+                <span class="feature-version">3.3</span>
+              </div>
+              <h3>Build in Parallel</h3>
+              <p>Identify independent parts of your plan and run them simultaneously using async subagents. Dependent steps kept in order. Explore subagent supports model selector for cheaper "find relevant code" tasks.</p>
+            </article>
+
+            <!-- Split PRs -->
+            <article class="feature-card animate-on-scroll">
+              <div class="feature-icon">✂️</div>
+              <div class="feature-meta">
+                <span class="feature-date">May 7, 2026</span>
+                <span class="feature-version">3.3</span>
+              </div>
+              <h3>Split into PRs</h3>
+              <p>Analyzes chat transcript, groups commits by logical concern, opens one PR per group. Detects real dependencies and adds "depends on" notes. No more giant PRs with unrelated changes.</p>
             </article>
           </div>
         </div>
@@ -170,50 +246,54 @@
           <h2 class="section-title">Major Version Progression</h2>
           <ol class="timeline" role="list">
             <li class="timeline-item"><div class="timeline-marker" aria-hidden="true"></div><div class="timeline-card"><span class="timeline-era">1.x Era · Foundation</span><h3 class="timeline-title">AI-native Editor Takes Shape</h3><p class="timeline-body">Cursor chose to fork VS Code rather than just making a plugin, enabling deep transformation of interaction and model pipelines.</p></div></li>
-            <li class="timeline-item"><div class="timeline-marker" aria-hidden="true"></div><div class="timeline-card"><span class="timeline-era">2.0 · October 29, 2025</span><h3 class="timeline-title">Composer & Multi-Agent Workbench</h3><p class="timeline-body">Explicitly pushed the product to "Agent parallelism": up to 8 Agents in parallel, with Composer, Browser GA, Sandboxed Terminals, Plan Mode, and Voice Mode.</p><p class="timeline-more"><a href="https://cursor.com/blog/2-0" target="_blank" rel="noopener noreferrer">Read 2.0 Release Blog</a></p></div></li>
-            <li class="timeline-item"><div class="timeline-marker" aria-hidden="true"></div><div class="timeline-card"><span class="timeline-era">Composer 2 · March 19, 2026</span><h3 class="timeline-title">New-gen In-house Model (Bridge)</h3><p class="timeline-body">Officially positioned as the new frontier coding model; connects with 3.0's "fast iteration during cloud↔local handoff" narrative.</p></div></li>
-            <li class="timeline-item"><div class="timeline-marker" aria-hidden="true"></div><div class="timeline-card"><span class="timeline-era">3.0 · April 2, 2026</span><h3 class="timeline-title">Interface Rebuild: Agent-first Unified Workspace</h3><p class="timeline-body">Emphasizes rebuilding the interface from the ground up: natively multi-workspace / multi-repo, desktop and cloud Agent experience unified; Design Mode brings browser annotations into Agent.</p><p class="timeline-more"><a href="https://cursor.com/changelog/3-0" target="_blank" rel="noopener noreferrer">Full Changelog 3.0</a></p></div></li>
+            <li class="timeline-item"><div class="timeline-marker" aria-hidden="true"></div><div class="timeline-card"><span class="timeline-era">2.0 · October 29, 2025</span><h3 class="timeline-title">Composer & Multi-Agent Workbench</h3><p class="timeline-body">Up to 8 Agents in parallel, with Composer, Browser GA, Sandboxed Terminals, Plan Mode, and Voice Mode.</p></div></li>
+            <li class="timeline-item"><div class="timeline-marker" aria-hidden="true"></div><div class="timeline-card"><span class="timeline-era">3.0 · April 2, 2026</span><h3 class="timeline-title">Agent-first Unified Workspace</h3><p class="timeline-body">Natively multi-workspace / multi-repo, desktop and cloud Agent experience unified. Design Mode brings browser annotations into Agent.</p></div></li>
+            <li class="timeline-item"><div class="timeline-marker" aria-hidden="true"></div><div class="timeline-card"><span class="timeline-era">3.3 · May 7, 2026</span><h3 class="timeline-title">Parallel Builds & PR Workflow</h3><p class="timeline-body">Build in Parallel, Split PRs, Unified PR Review. Agents work on independent steps simultaneously.</p></div></li>
+            <li class="timeline-item"><div class="timeline-marker" aria-hidden="true"></div><div class="timeline-card"><span class="timeline-era">3.4-3.5 · May 13-20, 2026</span><h3 class="timeline-title">Cloud Environments & Automation</h3><p class="timeline-body">Multi-repo cloud environments, Dockerfile build secrets, 70% faster rebuilds. Shared Canvases, /loop, multi-repo/no-repo automations. Jira & Teams integration.</p></div></li>
+            <li class="timeline-item"><div class="timeline-marker" aria-hidden="true"></div><div class="timeline-card"><span class="timeline-era">3.6 · May 29, 2026</span><h3 class="timeline-title">Auto-review & Composer 2.5</h3><p class="timeline-body"><strong>Auto-review</strong> reduces approval fatigue with tiered execution. <strong>Composer 2.5</strong> major intelligence upgrade for long tasks and complex instructions.</p></div></li>
           </ol>
         </div>
       </section>
 
-      <!-- Agents Window -->
-      <section id="agents-window" class="section">
-        <div class="container split">
-          <div>
-            <p class="section-label">Capability</p>
-            <h2 class="section-title">Agents Window</h2>
-            <p class="section-desc">Run multiple Agents in parallel across local, git worktree, cloud, and remote SSH environments; the interface is Agent-centric while preserving IDE depth.</p>
-            <ul class="checklist"><li>Unified sidebar consolidating in-progress Agents</li><li>Quick cloud↔local handoff, suitable for long tasks</li></ul>
-          </div>
-          <div class="panel-visual animate-on-scroll" aria-hidden="true">
-            <div class="flow-chart">
-              <div class="flow-node">Local</div>
-              <div class="flow-node">Worktree</div>
-              <div class="flow-node">Cloud</div>
-              <div class="flow-node">SSH</div>
-              <div class="flow-hub">Agents Window</div>
+      <!-- Pricing -->
+      <section id="pricing" class="section">
+        <div class="container">
+          <p class="section-label">Pricing</p>
+          <h2 class="section-title">Choose Your Plan</h2>
+          <div class="pricing-grid">
+            <div class="pricing-card animate-on-scroll">
+              <div class="pricing-header"><h3>Hobby</h3><div class="pricing-price">Free</div></div>
+              <ul class="pricing-features"><li>No credit card</li><li>Limited Agent requests</li><li>Limited Tab completion</li></ul>
+              <a href="https://cursor.com/download" class="btn btn-secondary" target="_blank">Download</a>
+            </div>
+            <div class="pricing-card animate-on-scroll">
+              <div class="pricing-header"><h3>Pro</h3><div class="pricing-price">$20<span>/mo</span></div></div>
+              <ul class="pricing-features"><li>Extended Agent limits</li><li>Access frontier models</li><li>MCP, Skills, Hooks</li><li>Cloud Agents</li></ul>
+              <a href="https://cursor.com/api/auth/checkoutDeepControl?yearly=false" class="btn btn-secondary" target="_blank">Get Pro</a>
+            </div>
+            <div class="pricing-card pricing-featured animate-on-scroll">
+              <div class="pricing-badge">Recommended</div>
+              <div class="pricing-header"><h3>Pro+</h3><div class="pricing-price">$60<span>/mo</span></div></div>
+              <ul class="pricing-features"><li>All Pro features</li><li>3x OpenAI/Claude/Gemini usage</li></ul>
+              <a href="https://cursor.com/api/auth/checkoutDeepControl?tier=pro_plus&yearly=false" class="btn btn-primary" target="_blank">Get Pro+</a>
+            </div>
+            <div class="pricing-card animate-on-scroll">
+              <div class="pricing-header"><h3>Ultra</h3><div class="pricing-price">$200<span>/mo</span></div></div>
+              <ul class="pricing-features"><li>All Pro features</li><li>20x OpenAI/Claude/Gemini usage</li><li>Priority access to new features</li></ul>
+              <a href="https://cursor.com/api/auth/checkoutDeepControl?tier=ultra&yearly=false" class="btn btn-secondary" target="_blank">Get Ultra</a>
+            </div>
+            <div class="pricing-card animate-on-scroll">
+              <div class="pricing-header"><h3>Teams</h3><div class="pricing-price">$40<span>/user/mo</span></div></div>
+              <ul class="pricing-features"><li>All Pro features</li><li>Shared chats, commands, rules</li><li>Centralized billing & analytics</li><li>RBAC, SAML/OIDC SSO</li></ul>
+              <a href="https://cursor.com/team/new-team?yearly=false" class="btn btn-secondary" target="_blank">Get Teams</a>
+            </div>
+            <div class="pricing-card animate-on-scroll">
+              <div class="pricing-header"><h3>Enterprise</h3><div class="pricing-price">Custom</div></div>
+              <ul class="pricing-features"><li>All Teams features</li><li>Pooled usage & invoicing</li><li>SCIM seat management</li><li>Priority support & CSM</li></ul>
+              <a href="https://cursor.com/contact-sales" class="btn btn-secondary" target="_blank">Contact Sales</a>
             </div>
           </div>
-        </div>
-      </section>
-
-      <!-- Design Mode -->
-      <section id="design-mode" class="section section-tint">
-        <div class="container">
-          <p class="section-label">Interaction</p>
-          <h2 class="section-title">Design Mode</h2>
-          <div class="kbd-table-wrap animate-on-scroll">
-            <table class="kbd-table">
-              <thead><tr><th scope="col">Action</th><th scope="col">Shortcut</th></tr></thead>
-              <tbody>
-                <tr><td>Toggle Design Mode</td><td><kbd>⌘</kbd> + <kbd>Shift</kbd> + <kbd>D</kbd></td></tr>
-                <tr><td>Select Area</td><td><kbd>Shift</kbd> + Drag</td></tr>
-                <tr><td>Add Element to Chat</td><td><kbd>⌘</kbd> + <kbd>L</kbd></td></tr>
-                <tr><td>Add Element to Input</td><td><kbd>⌥</kbd> + Click</td></tr>
-              </tbody>
-            </table>
-          </div>
+          <div class="pricing-note"><p><strong>Bugbot</strong> code review: now usage-based billing (Teams/Individual). Configurable effort levels (Default/High/Custom). <a href="https://cursor.com/pricing" target="_blank" rel="noopener noreferrer">View full pricing →</a></p></div>
         </div>
       </section>
 
@@ -226,27 +306,21 @@
             <table class="compare-table">
               <thead><tr><th scope="col">Dimension</th><th scope="col">Cursor</th><th scope="col">GitHub Copilot</th><th scope="col">Claude Code</th></tr></thead>
               <tbody>
-                <tr><th scope="row">Main Interface Form</th><td>Standalone AI IDE</td><td>Multi-editor plugin</td><td>Terminal / CLI Agent</td></tr>
+                <tr><th scope="row">Main Interface</th><td>Standalone AI IDE</td><td>Multi-editor plugin</td><td>Terminal / CLI Agent</td></tr>
                 <tr><th scope="row">In-IDE editing, LSP, debugging</th><td><span class="dot strong"></span></td><td><span class="dot mid"></span></td><td><span class="dot weak"></span></td></tr>
                 <tr><th scope="row">Multi-Agent orchestration</th><td><span class="dot strong"></span></td><td><span class="dot mid"></span></td><td><span class="dot strong"></span></td></tr>
                 <tr><th scope="row">Visual UI, browser annotation</th><td><span class="dot strong"></span></td><td><span class="dot weak"></span></td><td><span class="dot weak"></span></td></tr>
-                <tr><th scope="row">"Don't switch editors" — JetBrains</th><td><span class="dot weak"></span></td><td><span class="dot strong"></span></td><td><span class="dot strong"></span></td></tr>
-                <tr><th scope="row">Team compliance, Microsoft ecosystem</th><td><span class="dot mid"></span></td><td><span class="dot strong"></span></td><td><span class="dot mid"></span></td></tr>
+                <tr><th scope="row">"Don't switch editors"</th><td><span class="dot weak"></span></td><td><span class="dot strong"></span></td><td><span class="dot strong"></span></td></tr>
                 <tr><th scope="row">Cloud / Remote Agent</th><td><span class="dot strong"></span></td><td><span class="dot mid"></span></td><td><span class="dot weak"></span></td></tr>
-                <tr><th scope="row">SDK / Programmable Agents</th><td><span class="dot strong" title="Strong: TypeScript SDK"></span></td><td><span class="dot weak"></span></td><td><span class="dot mid" title="Medium: CLI integration"></span></td></tr>
-                <tr><th scope="row">Security Review / Vuln Scanning</th><td><span class="dot strong" title="Strong: Security Review"></span></td><td><span class="dot mid" title="Medium: Dependabot"></span></td><td><span class="dot weak"></span></td></tr>
-                <tr><th scope="row">Plugin Marketplace / MCP</th><td><span class="dot strong" title="Strong: Marketplace"></span></td><td><span class="dot mid" title="Medium: Extensions"></span></td><td><span class="dot strong" title="Strong: MCP native"></span></td></tr>
-                <tr><th scope="row">Interactive Visual Canvas</th><td><span class="dot strong" title="Strong: Canvases"></span></td><td><span class="dot weak"></span></td><td><span class="dot weak"></span></td></tr>
-                <tr><th scope="row">Code Review / PR Management</th><td><span class="dot strong" title="Strong: Bugbot"></span></td><td><span class="dot strong" title="Strong: Copilot Review"></span></td><td><span class="dot weak"></span></td></tr>
+                <tr><th scope="row">SDK / Programmable Agents</th><td><span class="dot strong"></span></td><td><span class="dot weak"></span></td><td><span class="dot mid"></span></td></tr>
+                <tr><th scope="row">Security Review</th><td><span class="dot strong"></span></td><td><span class="dot mid"></span></td><td><span class="dot weak"></span></td></tr>
+                <tr><th scope="row">Auto-review / Reduce approvals</th><td><span class="dot strong"></span></td><td><span class="dot weak"></span></td><td><span class="dot mid"></span></td></tr>
+                <tr><th scope="row">Plugin Marketplace / MCP</th><td><span class="dot strong"></span></td><td><span class="dot mid"></span></td><td><span class="dot strong"></span></td></tr>
+                <tr><th scope="row">Interactive Visual Canvas</th><td><span class="dot strong"></span></td><td><span class="dot weak"></span></td><td><span class="dot weak"></span></td></tr>
+                <tr><th scope="row">3rd-party Integration</th><td><span class="dot strong"></span></td><td><span class="dot strong"></span></td><td><span class="dot mid"></span></td></tr>
                 <tr><th scope="row">Starting Price</th><td>Free / $20/mo</td><td>Free / $10/mo</td><td>Pay per token</td></tr>
-                <tr><th scope="row">Offline / Local Models</th><td><span class="dot weak"></span></td><td><span class="dot mid" title="Medium: Local models optional"></span></td><td><span class="dot weak"></span></td></tr>
               </tbody>
             </table>
-          </div>
-          <div class="insight-cards">
-            <article class="insight-card animate-on-scroll"><h3>Favoring Cursor</h3><p>Long-term in VS Code-like interfaces; need LSP, built-in browser, multi-Agent panel, Design Mode, Canvases, Security Review for front-end and full-stack iteration. Need SDK for programmable agents.</p></article>
-            <article class="insight-card animate-on-scroll"><h3>Favoring Copilot</h3><p>Already invested in JetBrains / Visual Studio; want low switching cost for completion and Chat / Agent capabilities. Rely on Microsoft ecosystem and GitHub integration.</p></article>
-            <article class="insight-card animate-on-scroll"><h3>Favoring Claude Code</h3><p>Accustomed to terminal tasks; want Agent to autonomously make multi-step changes to the repo. Value MCP native integration and flexible token-based pricing.</p></article>
           </div>
         </div>
       </section>
@@ -267,7 +341,7 @@
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>Feature summary from <a href="https://cursor.com/changelog/3-0" target="_blank" rel="noopener noreferrer">official Changelog</a>; Timeline references public blogs and changelogs; Embedded videos are <strong>Bilibili third-party tutorials</strong>.</p>
+        <p>Feature summary from <a href="https://cursor.com/changelog" target="_blank" rel="noopener noreferrer">official Changelog</a>; Timeline references public blogs and changelogs. Last updated: May 31, 2026</p>
         <p class="muted">This page is a static demo site, freely modifiable and redistributable.</p>
       </div>
     </footer>
