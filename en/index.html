@@ -23,6 +23,7 @@
         <a class="logo" href="../">Cursor <span class="logo-ver">3.x</span></a>
         <nav class="nav" aria-label="Page navigation">
           <a href="#highlights">Highlights</a>
+          <a href="#composer-25">Composer 2.5</a>
           <a href="#new-features">New Features</a>
           <a href="#timeline">Timeline</a>
           <a href="#pricing">Pricing</a>
@@ -239,6 +240,40 @@
         </div>
       </section>
 
+
+      <!-- Composer 2.5 Deep Dive -->
+      <section id="composer-25" class="section">
+        <div class="container">
+          <p class="section-label">Core Model</p>
+          <h2 class="section-title">Composer 2.5 Deep Dive</h2>
+          <p class="section-desc">Cursor's latest in-house coding model, built on <strong>Kimi K2.5</strong> with massive RL training. Matches Claude Opus 4.7 and GPT-5.5 on benchmarks at <strong>1/10 to 1/60</strong> the cost.</p>
+          <div class="compare-wrap animate-on-scroll" style="margin-bottom:32px">
+            <table class="compare-table">
+              <thead><tr><th scope="col">Benchmark</th><th scope="col">Composer 2.5</th><th scope="col">Opus 4.7</th><th scope="col">GPT-5.5</th><th scope="col">Composer 2</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">SWE-Bench Multilingual</th><td><strong>79.8%</strong></td><td>80.5%</td><td>77.8%</td><td>73.7%</td></tr>
+                <tr><th scope="row">Terminal-Bench 2.0</th><td>69.3%</td><td>69.4%</td><td><strong>82.7%</strong></td><td>61.7%</td></tr>
+                <tr><th scope="row">CursorBench v3.1</th><td><strong>63.2%</strong></td><td>61.6%</td><td>59.2%</td><td>52.2%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="bento">
+            <article class="bento-card animate-on-scroll"><div class="bento-icon">💰</div><h3>Cost Advantage</h3><p>Standard: <strong>$0.50/$2.50</strong>/M tokens (~$0.07/task). Fast: <strong>$3/$15</strong>/M tokens (~$0.44/task). Opus 4.7 ~$4.10, GPT-5.5 ~$4.82 per task.</p></article>
+            <article class="bento-card animate-on-scroll"><div class="bento-icon">🎯</div><h3>Targeted RL</h3><p>Injects correction hints at error points during training. 25x more synthetic tasks including "feature deletion" scenarios.</p></article>
+            <article class="bento-card animate-on-scroll"><div class="bento-icon">⚡</div><h3>Fast Variant</h3><p>30% faster than Standard, avg 6.7 min/task. 6x cost. Default in Cursor.</p></article>
+          </div>
+          <div class="doc-panel animate-on-scroll" style="margin-top:32px">
+            <h3 class="doc-panel-title">External Reviews</h3>
+            <ul class="doc-link-list">
+              <li><a href="https://cursor.com/blog/composer-2-5" target="_blank" rel="noopener noreferrer">Official Blog</a></li>
+              <li><a href="https://artificialanalysis.ai/articles/cursor-composer-2-5-coding-agent-index" target="_blank" rel="noopener noreferrer">Artificial Analysis</a><span class="doc-link-hint">Coding Agent Index #3</span></li>
+              <li><a href="https://rawpickai.com/blog/composer-2-5-review" target="_blank" rel="noopener noreferrer">RawPickAI Review</a><span class="doc-link-hint">8 tasks tested, 4.2/5</span></li>
+              <li><a href="https://www.ai.cc/blogs/composer-2-5-review-cursor-ai-deep-dive-benchmarks-real-world-testing/" target="_blank" rel="noopener noreferrer">AI.cc Deep Dive</a><span class="doc-link-hint">48h test, 9.2/10</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <!-- Timeline -->
       <section id="timeline" class="section section-tint">
         <div class="container">
@@ -307,18 +342,18 @@
               <thead><tr><th scope="col">Dimension</th><th scope="col">Cursor</th><th scope="col">GitHub Copilot</th><th scope="col">Claude Code</th></tr></thead>
               <tbody>
                 <tr><th scope="row">Main Interface</th><td>Standalone AI IDE</td><td>Multi-editor plugin</td><td>Terminal / CLI Agent</td></tr>
-                <tr><th scope="row">In-IDE editing, LSP, debugging</th><td><span class="dot strong"></span></td><td><span class="dot mid"></span></td><td><span class="dot weak"></span></td></tr>
-                <tr><th scope="row">Multi-Agent orchestration</th><td><span class="dot strong"></span></td><td><span class="dot mid"></span></td><td><span class="dot strong"></span></td></tr>
-                <tr><th scope="row">Visual UI, browser annotation</th><td><span class="dot strong"></span></td><td><span class="dot weak"></span></td><td><span class="dot weak"></span></td></tr>
+                <tr><th scope="row">Proprietary Model</th><td>Composer 2.5</td><td>SWE-1.6</td><td>None</td><td>None</td><td>Context Engine</td></tr>
+                <tr><th scope="row">Multi-Agent</th><td><span class="dot strong"></span></td><td><span class="dot mid"></span></td><td><span class="dot mid"></span></td><td><span class="dot strong"></span></td><td><span class="dot mid"></span></td></tr>
+                <tr><th scope="row">Cloud Agent</th><td><span class="dot strong"></span></td><td><span class="dot weak"></span></td><td><span class="dot mid"></span></td><td><span class="dot weak"></span></td><td><span class="dot weak"></span></td></tr>
                 <tr><th scope="row">"Don't switch editors"</th><td><span class="dot weak"></span></td><td><span class="dot strong"></span></td><td><span class="dot strong"></span></td></tr>
                 <tr><th scope="row">Cloud / Remote Agent</th><td><span class="dot strong"></span></td><td><span class="dot mid"></span></td><td><span class="dot weak"></span></td></tr>
-                <tr><th scope="row">SDK / Programmable Agents</th><td><span class="dot strong"></span></td><td><span class="dot weak"></span></td><td><span class="dot mid"></span></td></tr>
-                <tr><th scope="row">Security Review</th><td><span class="dot strong"></span></td><td><span class="dot mid"></span></td><td><span class="dot weak"></span></td></tr>
+                
+                
                 <tr><th scope="row">Auto-review / Reduce approvals</th><td><span class="dot strong"></span></td><td><span class="dot weak"></span></td><td><span class="dot mid"></span></td></tr>
-                <tr><th scope="row">Plugin Marketplace / MCP</th><td><span class="dot strong"></span></td><td><span class="dot mid"></span></td><td><span class="dot strong"></span></td></tr>
-                <tr><th scope="row">Interactive Visual Canvas</th><td><span class="dot strong"></span></td><td><span class="dot weak"></span></td><td><span class="dot weak"></span></td></tr>
+                
+                
                 <tr><th scope="row">3rd-party Integration</th><td><span class="dot strong"></span></td><td><span class="dot strong"></span></td><td><span class="dot mid"></span></td></tr>
-                <tr><th scope="row">Starting Price</th><td>Free / $20/mo</td><td>Free / $10/mo</td><td>Pay per token</td></tr>
+                <tr><th scope="row">Free Tier</th><td>Limited</td><td><span class="dot strong">Most generous</span></td><td>Limited</td><td>Pay per token</td><td>None</td></tr>
               </tbody>
             </table>
           </div>
