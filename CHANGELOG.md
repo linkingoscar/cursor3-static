@@ -1,5 +1,47 @@
 # 修改日志
 
+## [3.0.0] - 2026-05-31
+
+### 新增
+
+- **3.6 功能板块 (May 29)**
+  - Auto-review 智能审查模式
+  - Composer 2.5 新模型
+
+- **3.5 功能板块 (May 20)**
+  - 共享画布 Shared Canvases
+  - /loop 循环任务
+  - Automations 自动化增强（多仓库/无仓库）
+  - Cursor 集成 Jira
+  - Cursor 集成 Microsoft Teams
+
+- **3.4 功能板块 (May 13)**
+  - 多仓库云环境
+  - Dockerfile 构建密钥
+  - 70% 更快重建（层缓存）
+  - Agent 引导的凭据验证
+  - 全屏标签页
+  - 紧凑聊天响应
+
+- **3.3 功能板块 (May 7)**
+  - 统一 PR 审查体验
+  - 并行构建 Build in Parallel
+  - 拆分 PR Split into PRs
+  - Quick-action pills
+  - Bugbot 可配置审查深度
+
+### 优化
+
+- 更新 Hero 区域为 3.6 版本信息
+- 更新版本演进时间线（新增 3.3-3.6 节点）
+- 更新竞品对比表格（新增 Auto-review、第三方集成维度）
+- 更新亮点速览（新增 Auto-review、/loop）
+- 更新编辑器命令列表（新增 /loop、/multitask）
+- 更新定价说明（Bugbot 改为按用量计费）
+- 更新官方链接列表
+
+---
+
 ## [2.0.0] - 2026-05-02
 
 ### 新增
