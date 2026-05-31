@@ -1,7 +1,7 @@
 {
-  "name": "Cursor 3.0 可视化介绍",
-  "short_name": "Cursor 3",
-  "description": "Cursor 3.0 介绍页：Agents Window、Design Mode、竞品对比",
+  "name": "Cursor 3.x 完整功能介绍",
+  "short_name": "Cursor 3.x",
+  "description": "Cursor 3.x 介绍页：Agents Window、Design Mode、Canvases、Auto-review、Composer 2.5、竞品对比。3.0→3.6 演进全记录。",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#fbfbfd",
