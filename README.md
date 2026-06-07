@@ -40,7 +40,7 @@ cursor3-static/
 | 🎯 Hero | 产品定位、官方链接 |
 | ✨ 亮点速览 | Agents Window、Design Mode、MCP 等 |
 | 🆕 新功能 (3.1-3.2) | Canvases、Multitask、Worktrees、SDK |
-| 🎬 影像 | B 站教程、官方文档链接 |
+| 🎬 影像 | 中文页：B 站教程嵌入；英文页：YouTube 官方/社区教程；官方文档链接 |
 | 📅 版本演进 | 1.x → 2.0 → Composer 2 → 3.0 时间线 |
 | 💰 定价方案 | Hobby / Pro / Pro+ / Ultra / Teams |
 | ⚔️ 竞品对比 | Cursor vs Copilot vs Claude Code (14 维度) |
@@ -133,6 +133,8 @@ php -S localhost:8000
 - [Cursor Blog](https://cursor.com/blog) - 官方博客
 - [Cursor Pricing](https://cursor.com/pricing) - 官方定价
 - [Cursor Docs](https://cursor.com/docs) - 官方文档
+- B 站视频为第三方创作者内容，非官方出品
+- YouTube 视频来自 Cursor 官方频道及 Traversy Media 等社区创作者
 
 ## 📄 许可证
 
